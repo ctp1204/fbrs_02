@@ -15,4 +15,11 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
+//= require popper
 //= require bootstrap-sprockets
+//= require bootstrap-slider
+//= require owl.carousel
+//= require gmap3
+//= require jquery-ui
+//= require modernizr.custom.28468
+//= require jquery.cslider
