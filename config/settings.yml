@@ -1,0 +1,13 @@
+user:
+  name:
+    max_length: 50
+  email:
+    max_length: 255
+  password:
+    min_length: 6
+review:
+  max_length: 140
+comment:
+  max_length: 140
+book:
+  max_length: 50
