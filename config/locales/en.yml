@@ -1,4 +1,5 @@
 en:
   hello: "Hello world"
-  application:
-    app: "application"
+  layouts:
+    application:
+      app: "application"
