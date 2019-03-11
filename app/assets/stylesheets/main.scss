@@ -1,6 +1,8 @@
+
 /* =============================================
 			Theme Reset Style
 ============================================= */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Playfair+Display:400,700|Work+Sans:300,400,500,600,700);
 * {
 	margin: 0px;
 	padding: 0px;
@@ -26,7 +28,6 @@ body h6 {
 	font-weight: 400;
 	line-height: 1.5;
 	font-style: normal;
-	text-transform:capitalize;
 	font-family: 'Work Sans', Arial, Helvetica, sans-serif;
 }
 h1 { font-size: 48px;}
@@ -106,7 +107,6 @@ input[type="color"],
 	display: inline-block;
 	vertical-align: middle;
 	border: 1px solid #dbdbdb;
-	text-transform: capitalize;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1711,7 +1711,8 @@ li.menu-item-has-mega-menu { position: static; }
 		rgba(0,0,0,0) 8%,
 		rgba(0,0,0,0.1) 5%,
 		rgba(0,0,0,0) 13%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000',
+	 endColorstr='#00000000',GradientType=1 );
 }
 .tg-backcover {
 	top: 2%;
@@ -1735,7 +1736,7 @@ li.menu-item-has-mega-menu { position: static; }
 	height: 92%;
 	content: '';
 	position: absolute;
-	background: url('../images/books/bookpattren.png') no-repeat;
+	background: url('books/bookpattren.png') no-repeat;
 	-webkit-background-size: 100% 100%;
 	-moz-background-size: 100% 100%;
 	-ms-background-size: 100% 100%;
@@ -4005,139 +4006,3 @@ blockquote .tg-bookwriter{
 .tg-booksfromauthor .tg-postbook .tg-btn{padding:0;}
 .tg-booksfromauthor .tg-postbook .tg-btn i,
 .tg-booksfromauthor .tg-postbook .tg-btn em{float:none;}
-/* =============================================
-			Comingsoon Style
-============================================= */
-body.tg-comingsoonpage{
-	height:auto;
-	position:static;
-	overflow-x: hidden;
-	background: url(../images/comingsoon-bg.jpg) no-repeat center center fixed;
-	background-size: cover;
-}
-body.tg-comingsoonpage:before{
-	top:0;
-	left:0;
-	content:'';
-	width:100%;
-	height:100%;
-	position:fixed;
-	background:
-		-moz-linear-gradient(top,
-		rgba(72,72,72,0.6) 0%,
-		rgba(72,72,72,0.6) 100%);
-	background:
-		-webkit-linear-gradient(top,
-		rgba(72,72,72,0.6) 0%,
-		rgba(72,72,72,0.6) 100%);
-	background:
-		linear-gradient(to bottom,
-		rgba(72,72,72,0.6) 0%,
-		rgba(72,72,72,0.6) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99484848', endColorstr='#99484848',GradientType=0 );
-}
-.tg-comingsoonholder{
-	max-width:570px;
-	z-index:2;
-	width:100%;
-	margin:0 auto;
-	background:#fff;
-	overflow:hidden;
-	position:relative
-}
-.tg-comingsoonholder .tg-logo{
-	width:100%;
-	padding:60px 20px;
-	border-bottom:1px solid #dbdbdb;
-}
-.tg-comingsoonholder .tg-logo img{
-	width:auto;
-	height:auto;
-	display:block;
-	margin:0 auto;
-}
-.tg-comingsooncontent{
-	width:100%;
-	float:left;
-	padding:57px 40px;
-	text-align:center;
-}
-.tg-comingsoonhead{
-	width:100%;
-	float:left;
-	margin:0 0 30px;
-	padding:0 0 30px;
-	position:relative;
-}
-.tg-comingsoonhead:before{
-	bottom:0;
-	left:50%;
-	content:'';
-	height:1px;
-	width:170px;
-	position:absolute;
-	margin:0 0 0 -85px;
-	background:#dbdbdb;
-}
-.tg-comingsoonhead h2{
-	font-size:40px;
-	margin:0 0 18px;
-	font-weight:bold;
-	line-height:30px;
-	text-transform:uppercase;
-}
-.tg-comingsoonhead h3{
-	margin:0;
-	font-size:20px;
-	font-weight:500;
-	line-height:15px;
-}
-.tg-comingsooncontent .tg-description{padding:0 0 25px;}
-.tg-comingsooncontent .tg-description p{margin:0;}
-.tg-comming-sooncounter{
-	width: auto;
-	float: none;
-	clear: both;
-	margin: -15px;
-	overflow: hidden;
-}
-.tg-counterbox{
-	width:50%;
-	float:left;
-	padding:15px;
-	text-align:center;
-}
-.timer_box{
-	width:100%;
-	float:left;
-	padding:38px 0;
-	background:#f7f7f7;
-}
-.timer_box h1{
-	font-size:40px;
-	font-weight:300;
-	line-height:30px;
-}
-.timer_box p{
-	margin:0;
-	font-size:20px;
-	line-height:15px;
-}
-#seconds h1,
-#seconds p{color:#fff;}
-.tg-comingsoonholder .tg-formnewsletter{
-	margin:0;
-	padding:30px;
-	background:#f7f7f7;
-}
-.tg-comingsoonholder .tg-formnewsletter .form-group{margin:0;}
-.tg-comingsoonholder .tg-formnewsletter label{
-	color:#404040;
-	font-size:18px;
-	font-weight:500;
-	line-height:18px;
-}
-.tg-comingsoonholder .tg-formnewsletter button{top:28px;}
-.tg-comingsoonholder .tg-formnewsletter input{margin:0;}
-body.tg-comingsoonpage .tg-footer{border:0;}
-body.tg-comingsoonpage .tg-footerbar{position:static;}

@@ -106,22 +106,60 @@ input:focus,
 .tg-support .tg-clientserviceicon i{color: #f16745;}
 
 .voilamdo{
-  background-image: asset-data-url('parallax/bgparallax-06.jpg');
+  background-image: url('parallax/bgparallax-04.jpg');
   background-attachment: fixed;
   background-size:cover;
 }
 .status1 {
-  background-image: asset-data-url('parallax/bgparallax-01.jpg');
+  background-image: url('parallax/bgparallax-01.jpg');
   background-attachment: fixed;
   background-size:cover;
 }
 .status2 {
-  background-image: asset-data-url('parallax/bgparallax-02.jpg');
+  background-image: url('parallax/bgparallax-02.jpg');
   background-attachment: fixed;
   background-size:cover;
 }
 .status3 {
-  background-image: asset-data-url('parallax/bgparallax-03.jpg');
+  background-image: url('parallax/bgparallax-03.jpg');
   background-attachment: fixed;
   background-size:cover;
+}
+.books {
+  height:350px;
+}
+
+/* =============================================
+      Comingsoon Style
+============================================= */
+.tg-coming{
+  max-width:570px;
+  width:100%;
+  margin:0 auto;
+  background:#fff;
+  overflow:hidden;
+}
+.tg-coming .tg-logo{
+  width:100%;
+  padding:60px 20px;
+  border-bottom:1px solid #dbdbdb;
+}
+.tg-coming .tg-logo img{
+  width:auto;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+.tg-coming .tg-formnewsletter{
+  margin:0;
+  padding:30px;
+  background:#f7f7f7;
+}
+
+
+
+.new {
+  background-image: url('comingsoon-bg.jpg');
+  background-size: cover;
+    background-attachment:fixed;
 }

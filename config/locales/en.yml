@@ -1,5 +1,23 @@
 en:
+  messenger: "sorry, Not found !"
   hello: "Hello world"
   layouts:
     application:
       app: "application"
+  deleted: "Book deleted"
+  un_delete: "unsuccessfully_book"
+  books:
+    banner:
+      all_book: "All Books"
+    form:
+      select: "Select a category"
+      book_title: "Book Title"
+    edit:
+      book_title: "Book Title"
+  shared:
+    error_messages:
+      status: "The form contains"
+      errors: "error"
+  controller:
+    category: "Category not found!"
+    update: "Update success"

@@ -53,7 +53,7 @@ jQuery(document).on('ready', function() {
 		loop: true,
 		margin: 30,
 		dots: true,
-		autoplay: true,
+		autoplay: false,
 		navText: [
 					'<i class="fa fa-chevron-left"></i>',
 					'<i class="fa fa-chevron-right"></i>'

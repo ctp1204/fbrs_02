@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_024544) do
+ActiveRecord::Schema.define(version: 2019_03_09_112507) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "target_id"
@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(version: 2019_03_06_024544) do
     t.integer "number_pages"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "book_img_file_name"
+    t.string "book_img_content_type"
+    t.bigint "book_img_file_size"
+    t.datetime "book_img_updated_at"
     t.index ["category_id"], name: "index_books_on_category_id"
   end
 
