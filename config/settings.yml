@@ -11,3 +11,5 @@ comment:
   max_length: 140
 book:
   max_length: 50
+book_index: "250x350"
+book_show: "325x475"

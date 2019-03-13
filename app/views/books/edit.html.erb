@@ -1,0 +1,25 @@
+
+<main id="tg-main" class="tg-main tg-haslayout">
+<div class="new">
+  <div class="tg-coming">
+    <strong class="tg-logo">
+      <%= link_to image_tag("logo-02.png", alt: "logo") %>
+    </strong>
+        <div class="tg-formtheme tg-formnewsletter">
+          <%= simple_form_for @book, html: {multipart: true} do |f| %>
+          <%= f.file_field :book_img %>
+          <%= f.select :category_id, cats %>
+          <%= f.input :title, label:  (t".book_title") %>
+          <%= f.input :publish_date %>
+          <%= f.input :content %>
+          <%= f.input :description %>
+          <%= f.input :author %>
+          <%= f.input :publisher %>
+          <%= f.input :rate_points %>
+          <%= f.input :number_pages %>
+          <%= f.button :submit %>
+          <% end %>
+        </div>
+  </div>
+</div>
+</main>

@@ -1,0 +1,14 @@
+<%= simple_form_for @book, html: {multipart: true} do |f| %>
+<%= f.select :category_id, options_for_select(cats),
+ prompt: (t".select") %>
+<%= f.file_field :book_img %>
+<%= f.input :title, label:  t(".book_title") %>
+<%= f.input :publish_date %>
+<%= f.input :content %>
+<%= f.input :description %>
+<%= f.input :author %>
+<%= f.input :publisher %>
+<%= f.input :rate_points %>
+<%= f.input :number_pages %>
+<%= f.button :submit %>
+<% end %>
