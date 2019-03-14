@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.newest
-    @bookNews = Book.newest.paginate page: params[:page],
+    @book_news = Book.newest.paginate page: params[:page],
       per_page: Settings.controllers.book.index_page
   end
 

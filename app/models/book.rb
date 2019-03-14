@@ -3,7 +3,8 @@ class Book < ApplicationRecord
   has_many :marks, dependent: :destroy
   has_many :reviews, dependent: :destroy
   scope :newest, ->{order created_at: :desc}
-  scope :by_category, ->(category_id){where category_id: category_id if category_id.present?}
+  scope :by_category,
+    ->(category_id){where category_id: category_id if category_id.present?}
 
   has_attached_file :book_img, styles:
    {book_index: Settings.book_index, book_show: Settings.book_show},

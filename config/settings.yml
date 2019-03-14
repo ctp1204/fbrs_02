@@ -21,3 +21,5 @@ controllers:
     index_page: 3
 models:
   limit: 4
+controller:
+  sessions: "1"
