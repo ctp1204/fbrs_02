@@ -42,11 +42,6 @@
                     <figure class="tg-featureimg">
                       <%= image_tag @book.book_img.url(:book_show), class: "book_show" %>
                     </figure>
-                    <div class="tg-postbookcontent">
-                      <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                        <span>add to wishlist</span>
-                      </a>
-                    </div>
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
@@ -57,68 +52,68 @@
                     <div class="tg-booktitle">
                       <h3><%= @book.title %></h3>
                     </div>
-                    <span class="tg-bookwriter">Author: <%= @book.author %></span>
-                    <span class="tg-bookwriter">By: <%= @book.publisher %></span>
+                    <span class="tg-bookwriter"><%= t "view.books.show.author" %> <%= @book.author %></span>
+                    <span class="tg-bookwriter"><%= t "view.books.show.by" %> <%= @book.publisher %></span>
+                    <h4><%= t "view.books.show.avg_rating" %> </h4>
+                    <div class="average_review-rating" data-score="<%= @book.rate_points %>"></div>
+                    <span><%= t "view.books.show.base" %> <%= @book.reviews.count %> reviews</span>
                     <span>
-                    <%= link_to t("view.book.show.back"), root_path %>
+                    <%= link_to t("view.books.show.back"), root_path %>
                     <% if logged_in? && current_user.admin %>
-                      <%= link_to t("view.book.show.edit_book"), edit_book_path(@book) %>
-                      <%= link_to t("view.book.show.delete"), book_path(@book), method: :delete, data:
-                        { confirm: t("view.book.show.sure") } %>
+                      <%= link_to t("view.books.show.edit_book"), edit_book_path(@book) %>
+                      <%= link_to t("view.books.show.delete"), book_path(@book), method: :delete, data:
+                        { confirm: t("view.books.show.sure") } %>
                     <% end %>
                     </span>
-
-                    <span class="tg-stars"><span></span></span>
-                    <span class="tg-addreviews"><a href="javascript:void(0);">Add Your Review</a></span>
-                    <div class="tg-description">
-                      <p><%= @book.description %> <a href="javascript:void(0);">More</a></p>
-                    </div>
                   </div>
                 </div>
                 <div class="tg-productdescription">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="tg-sectionhead">
-
                     </div>
                     <ul class="tg-themetabs" role="tablist">
                       <li role="presentation" class="active">
-                        <a href="#description" data-toggle="tab">Description</a></li>
-                        <li role="presentation"><a href="#review" data-toggle="tab">Reviews</a></li>
-                      </ul>
-                      <div class="tg-tab-content tab-content">
-                        <div role="tabpanel" class="tg-tab-pane tab-pane active" id="description">
-                          <div class="tg-description">
-                            <p><%= @book.content %></p>
-                          </div>
+                        <a href="#review" data-toggle="tab"><%= t "view.books.show.show_review" %></a>
+                      </li>
+                      <li role="presentation">
+                        <a href="#description" data-toggle="tab"><%= t "view.books.show.content" %></a>
+                      </li>
+                    </ul>
+                    <div class="tg-tab-content tab-content">
+                      <div role="tabpanel" class="tg-tab-pane tab-pane" id="description">
+                        <div class="tg-description">
+                          <p><%= @book.content %></p>
                         </div>
-                        <div role="tabpanel" class="tg-tab-pane tab-pane" id="review">
-                          <div class="tg-description">
-                            <p>#Comment & Reply</p>
-                          </div>
+                      </div>
+                      <div role="tabpanel" class="tg-tab-pane tab-pane active" id="review">
+                        <div class="tg-description">
+                          <%= render @book.reviews %>
+                          <%= link_to t("view.books.show.addreview"), new_book_review_path(@book) %>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  <% if @books.any? %>
-                  <div class="tg-sectionhead">
-                    <h2><span>News Books</span>Related Category</h2>
-                  </div>
-                  <%= render @books %>
-                  <% else %>
-                  <div class="tg-sectionhead">
-                    <h2><span>Related Books</span>You May Also Like</h2>
-                  </div>
-                  <h4>There are no books currently in this category</h4>
-                  <% end %>
                 </div>
+
+                <% if @books.any? %>
+                <div class="tg-sectionhead">
+                  <h2><span><%= t"view.books.show.new_book" %></span><%= t"view.books.show.relate" %></h2>
+                </div>
+                  <%= render @books %>
+                <% else %>
+                <div class="tg-sectionhead">
+                  <h2><span><%= t "view.books.show.relate_book" %></span><%= t "view.books.show.also_like" %></h2>
+                </div>
+                <h4><%= t "view.books.show.no_category" %></h4>
+                <% end %>
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
-            <%= render "left" %>
-          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
+          <%= render "left" %>
         </div>
       </div>
     </div>
   </div>
+</div>

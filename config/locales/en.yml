@@ -1,6 +1,7 @@
 en:
   title: "Book Review System"
   messenger: "sorry, Not found !"
+  please_login: "Please Log in."
   hello: "Hello world"
   pass_reset: "Password reset"
   layouts:
@@ -58,6 +59,15 @@ en:
       pass_reset: "Password has been reset."
       pass_expired: "Password reset has expired"
       email_not_found: "Email address not found"
+    reviews:
+      create_review: "Created a new review"
+      create_review_faild: "Create reivew faild"
+      update_review: "Updated a new review"
+      update_review_faild: "Updated review faild"
+      delete_reivew: "Delete review success"
+      delete_review_faild: "Delete review faild"
+      no_data_book: "Sorry, no data book"
+      no_data_review: "Sorry, no data review"
   view:
     users:
       new:
@@ -82,10 +92,23 @@ en:
 your password will stay as it is."
     books:
       show:
+        show_review: "Reviews"
+        content: "Content"
         back: "Back"
         edit_book: "Edit Book"
         delete: "Delete"
         sure: "Are you sure?"
+        author: "Author:"
+        by: "By:"
+        avg_rating: "Average Rating:"
+        base: "Based on:"
+        review: "reviews"
+        new_book: "News Books"
+        relate: "Related Category"
+        relate_book: "Related Books"
+        also_like: "You May Also Like"
+        no_category: "There are no books currently in this category"
+        addreview: "AddReview"
       bookslider:
         people_choice: "People’s Choice"
         bestselling: "Bestselling Books"
@@ -111,6 +134,21 @@ your password will stay as it is."
       new:
         forgot_pass: "Forgot password"
         submit: "Submit"
+    password_reset:
+      new:
+        forgot: "Forgot password"
+        submit: "Submit"
+      edit:
+        reset: "Reset password"
+        update: "Update password"
+    review:
+      created_at: "Reviews create at %{at}"
+      rate: "Rating:"
+      new_review: "New Review Book:"
+      edit_review: "Edit Reviews Book:"
+      edit: "Edit"
+      delete: "Delete"
+      sure: "Are you sure ? "
   activerecord:
     attributes:
       user:

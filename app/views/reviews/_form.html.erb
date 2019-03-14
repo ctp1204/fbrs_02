@@ -1,0 +1,5 @@
+<%= simple_form_for([@book, @book_reivew]) do |f| %>
+  <div id="rating-form"><label><%= t "view.review.rate" %></label></div>
+  <%= f.input :content %>
+  <%= f.button :submit, class: "btn-custom2" %>
+<% end %>

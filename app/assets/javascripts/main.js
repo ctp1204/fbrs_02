@@ -14,6 +14,27 @@ $(document).on('turbolinks:load', function() {
 		var _scrollUp = jQuery('html, body');
 		_scrollUp.animate({ scrollTop: 0 }, 'slow');
 	})
+
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function(){
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+
+  $('.average_review-rating').raty({
+    readOnly: true,
+    path: '/assets/',
+    score: function(){
+      return $(this).attr('data-score');
+    }
+  });
+
+  $('#rating-form').raty({
+    path: '/assets/',
+    scoreName: 'review[rate]'
+  });
 	/* -------------------------------------
 			COLLAPSE MENU SMALL DEVICES
 	-------------------------------------- */

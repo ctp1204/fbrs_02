@@ -69,14 +69,10 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    @user = User.find_by id: params[:id]
-    return if @user
-    redirect_to(root_url) unless current_user?(@user)
-    flash[:danger] = t "controller.user.find_user_error"
-    redirect_to root_path
+    redirect_to root_path unless current_user?(@user)
   end
 
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    redirect_to root_path unless current_user.admin?
   end
 end
