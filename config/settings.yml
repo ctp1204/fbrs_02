@@ -5,6 +5,8 @@ user:
     max_length: 255
   password:
     min_length: 6
+  pass_rs:
+    rs_sent_at: 2
 review:
   max_length: 140
 comment:
@@ -19,7 +21,12 @@ helpers:
 controllers:
   book:
     index_page: 3
+  user:
+    index_page: 5
 models:
   limit: 4
 controller:
   sessions: "1"
+view:
+  users:
+    size: 50

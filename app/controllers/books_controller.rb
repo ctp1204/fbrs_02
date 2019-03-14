@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
+  before_action :logged_in_user, except: %i(index show find)
   before_action :load_book, except: %i(index find new create)
+  before_action :admin_user, except: %i(index show find)
   before_action :book_by_category, only: %i(show find)
 
   def index
@@ -58,6 +60,17 @@ class BooksController < ApplicationController
     return if @book
     flash[:danger] = t "messenger"
     redirect_to books_path
+  end
+
+  def logged_in_user
+    return if logged_in?
+    store_location
+    flash[:danger] = t "controller.book.please_login"
+    redirect_to login_path
+  end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
   end
 
   def book_by_category

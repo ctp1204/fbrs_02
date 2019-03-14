@@ -59,6 +59,15 @@
                     </div>
                     <span class="tg-bookwriter">Author: <%= @book.author %></span>
                     <span class="tg-bookwriter">By: <%= @book.publisher %></span>
+                    <span>
+                    <%= link_to t("view.book.show.back"), root_path %>
+                    <% if logged_in? && current_user.admin %>
+                      <%= link_to t("view.book.show.edit_book"), edit_book_path(@book) %>
+                      <%= link_to t("view.book.show.delete"), book_path(@book), method: :delete, data:
+                        { confirm: t("view.book.show.sure") } %>
+                    <% end %>
+                    </span>
+
                     <span class="tg-stars"><span></span></span>
                     <span class="tg-addreviews"><a href="javascript:void(0);">Add Your Review</a></span>
                     <div class="tg-description">

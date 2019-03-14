@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_14_034615) do
+ActiveRecord::Schema.define(version: 2019_03_15_022213) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "target_id"
@@ -118,6 +118,12 @@ ActiveRecord::Schema.define(version: 2019_03_14_034615) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "remember_digest"
+    t.boolean "admin"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
+    t.string "activation_digest"
+    t.boolean "activated"
+    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
