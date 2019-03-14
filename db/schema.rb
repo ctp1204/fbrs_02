@@ -58,10 +58,10 @@ ActiveRecord::Schema.define(version: 2019_03_15_022213) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "activity_id"
+    t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["activity_id"], name: "index_likes_on_activity_id"
+    t.index ["book_id"], name: "index_likes_on_book_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 2019_03_15_022213) do
     t.string "activation_digest"
     t.boolean "activated"
     t.datetime "activated_at"
-
     t.index ["email"], name: "index_users_on_email", unique: true
   end
+
 end

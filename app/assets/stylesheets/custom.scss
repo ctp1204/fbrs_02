@@ -278,3 +278,41 @@ label.form-control-label.text.required {
     width: 100%;
     float: left;
 }
+.like-unlike {
+    width: 20%;
+    border: 1px solid #ccc;
+    padding: 5px 5px 5px 5px;
+    background-color: rgba(0, 100, 0, 0.12);
+    border-radius: 3px;
+    margin: 9px 0px;
+}
+input.btn.btn-success {
+    width: 100%;
+}
+a.btn.btn-danger {
+    width: 100%;
+}
+.count_like {
+    width: 60%;
+    margin-left: 36px;
+}
+.average_review-rating {
+    margin-left: 140px;
+    margin-top: -34px;
+}
+.base {
+    float: right;
+    margin-top: -21px;
+    margin-right: 187px;
+}
+.add_review a {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    padding: 7px 93px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.tg-postbook {
+    margin-bottom: 12px;
+}

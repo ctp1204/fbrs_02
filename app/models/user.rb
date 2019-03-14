@@ -2,7 +2,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   has_many :reviews, dependent: :destroy
   has_many :books
-  # has_many :likes, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   # has_many :activities, dependent: :destroy
   # has_many :marks, dependent: :destroy

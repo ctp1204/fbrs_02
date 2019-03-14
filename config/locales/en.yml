@@ -5,6 +5,7 @@ en:
   please_login: "Please Log in."
   hello: "Hello world"
   pass_reset: "Password reset"
+  sure: "You a sure?"
   error: "An error has occurred, please try again!"
   layouts:
     application:
@@ -78,6 +79,12 @@ en:
       create_comment_fail: "Create reivew fail"
       delete_comment: "Delete comment success"
       delete_comment_fail: "Delete comment fail"
+    likes:
+      like_success: "Like a book success"
+      like_fail: "Like a book fail"
+      unlike_success: "Unlike a book success"
+      unlike_fail: "Unlike a book fail"
+      load_like: "Sorry, no like"
   view:
     shared:
       following: "following"
@@ -138,6 +145,8 @@ your password will stay as it is."
         nostrud exercitation ullamcoiars nisiuip commodo consequat aute irure
         dolor in aprehenderit aveli esseati cillum dolor fugiat nulla pariatur
         cepteur sint occaecat cupidatat."
+    likes:
+      like: "Like"
     sessions:
       login: "Log in"
       signup : "Sign up now!"
