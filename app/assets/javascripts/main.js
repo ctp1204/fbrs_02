@@ -1,7 +1,7 @@
 /* -------------------------------------
 		CUSTOM FUNCTION WRITE HERE
 -------------------------------------- */
-jQuery(document).on('ready', function() {
+$(document).on('turbolinks:load', function() {
 	"use strict";
 	jQuery('.tg-themetabnav > li > a').hover(function() {
 		jQuery(this).tab('show');

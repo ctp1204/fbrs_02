@@ -3,8 +3,7 @@ module BooksHelper
     @categories = Category.all.map{|c| [c.name, c.id]}
   end
 
-  def all_category
-    Category.all
+  def load_categories
+    Category.sort_by_name
   end
-
 end

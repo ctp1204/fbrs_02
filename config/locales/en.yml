@@ -1,4 +1,5 @@
 en:
+  title: "Book Review System"
   messenger: "sorry, Not found !"
   hello: "Hello world"
   layouts:
@@ -21,3 +22,35 @@ en:
   controller:
     category: "Category not found!"
     update: "Update success"
+    user:
+      create_user: "Welcome to the Sample App!"
+      find_user_error: "Sorry, no data found user"
+  view:
+    users:
+      new:
+        sign_up: "Sign up"
+        create_user: "Create my account"
+    books:
+      bookslider:
+        people_choice: "People’s Choice"
+        bestselling: "Bestselling Books"
+      newrelease:
+        newspice: "Taste The New Spice"
+        newbook: "New Release Books"
+        description: "Consectetur adipisicing elit sed do eiusmod tempor
+        incididunt labore toloregna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamcoiars nisiuip commodo consequat aute irure
+        dolor in aprehenderit aveli esseati cillum dolor fugiat nulla pariatur
+        cepteur sint occaecat cupidatat."
+
+  activerecord:
+    attributes:
+      user:
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        address: "Address"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        role: "Role"
+

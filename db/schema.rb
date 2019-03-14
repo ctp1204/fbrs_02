@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2019_03_09_112507) do
   create_table "books", force: :cascade do |t|
     t.integer "category_id"
     t.string "title"
-    t.date "publish_date"
     t.text "content"
     t.text "description"
     t.string "author"
