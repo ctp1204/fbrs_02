@@ -51,4 +51,8 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+
+  def like? book
+    current_user.likes.find_by(book_id: book.id).present?
+  end
 end

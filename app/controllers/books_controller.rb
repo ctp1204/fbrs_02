@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :logged_in_user, except: %i(index show find)
-  before_action :load_book, except: %i(index find new create)
+  before_action :load_book, :build_like, except: %i(index find new create)
   before_action :admin_user, except: %i(index show find)
   before_action :book_by_category, only: %i(show find)
 
@@ -60,6 +60,10 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit :title, :content, :description, :author,
       :publisher, :rate_points, :number_pages, :category_id, :book_img
+  end
+
+  def build_like
+    @like = @book.likes.new
   end
 
   def load_book
