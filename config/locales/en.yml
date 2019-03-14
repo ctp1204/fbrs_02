@@ -97,6 +97,8 @@ en:
       unlike_success: "Unlike a book success"
       unlike_fail: "Unlike a book fail"
       load_like: "Sorry, no like"
+    admin:
+      fail: "data not found"
   view:
     shared:
       following: "following"
@@ -224,8 +226,13 @@ your password will stay as it is."
         edit_book: "Edit Book"
       index:
         add: "ADD"
-        category: "Quản lý danh mục"
+        category: "Quản lý truyện"
       new:
         add_book: "Add Book"
       form:
         book_title: "Book Title"
+      categories:
+        delete: " Delete"
+        edit: "Sửa Danh Mục"
+        name: "Tên Danh Mục"
+        add_category: "Add Category"

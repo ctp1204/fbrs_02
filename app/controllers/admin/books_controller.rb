@@ -27,7 +27,7 @@ class Admin::BooksController < ApplicationController
       flash[:success] = t ".update"
       redirect_to admin_books_path
     else
-      render "admin/books/edit"
+      render :edit
     end
   end
 
