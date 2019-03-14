@@ -6,11 +6,12 @@ class Book < ApplicationRecord
 
   has_attached_file :book_img, styles:
    {book_index: Settings.book_index, book_show: Settings.book_show},
-   default_url: "/images/:style/missing.png"
+    default_url: "/images/:style/missing.png"
   validates_attachment_content_type :book_img, content_type: %r{\Aimage\/.*\z}
   validates :title, presence: true, length: {maximum: Settings.book.max_length},
    uniqueness: {case_sensitive: false}
   validates :author, presence: true, length: {maximum: Settings.book.max_length}
+
   delegate :name, to: :category, prefix: true, allow_nil: true
 
   scope :newest, ->{order created_at: :desc}

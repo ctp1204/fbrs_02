@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
+    <h2><%= t (".category") %></h2>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <div class="row">
+            <div class="col-sm-6">
+                <a href="/admin/books/new" class="btn btn-success btn-md"><%= t ".add" %></a>
+            </div>
+          </div>
+          <div>
+            <br>
+          </div>
+          <%= render @books %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
