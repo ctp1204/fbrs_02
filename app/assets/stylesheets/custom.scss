@@ -238,6 +238,7 @@ input {
   margin-left: 0;
 }
 /* Users index */
+$silver: #ccc;
 
 .users {
   list-style: none;
@@ -247,4 +248,33 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+textarea#comment_content {
+    float: right;
+    width: 90%;
+    height: 120px;
+}
+.btn-custom3 {
+    width: 100%;
+    float: right;
+}
+input.btn.btn-custom3 {
+    width: 90%;
+}
+.cmt {
+    width: 90%;
+    float: right;
+    margin-top: 15px;
+    border-top: 1px solid $silver;
+}
+.cmt-comment {
+    float: left;
+    margin-right: 5px;
+}
+label.form-control-label.text.required {
+    display: none;
+}
+.review {
+    width: 100%;
+    float: left;
 }

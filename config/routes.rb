@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get "password_resets/edit"
   delete "/logout", to: "sessions#destroy"
   resources :books do
-    resources :reviews
+    resources :reviews do
+      resources :comments
+    end
   end
   resources :users
   resources :password_resets, only: [:new, :create, :edit, :update]

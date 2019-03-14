@@ -93,19 +93,18 @@
                       </div>
                     </div>
                   </div>
+                  <% if @books.any? %>
+                    <div class="tg-sectionhead">
+                      <h2><span><%= t "view.books.show.new_book" %></span><%= t "view.books.show.relate" %></h2>
+                    </div>
+                    <%= render @books %>
+                  <% else %>
+                    <div class="tg-sectionhead">
+                      <h2><span><%= t "view.books.show.new_book" %></span><%= t "view.books.show.relate" %></h2>
+                    </div>
+                    <h4><%= t "view.books.show.no_category" %></h4>
+                  <% end %>
                 </div>
-
-                <% if @books.any? %>
-                <div class="tg-sectionhead">
-                  <h2><span><%= t"view.books.show.new_book" %></span><%= t"view.books.show.relate" %></h2>
-                </div>
-                  <%= render @books %>
-                <% else %>
-                <div class="tg-sectionhead">
-                  <h2><span><%= t "view.books.show.relate_book" %></span><%= t "view.books.show.also_like" %></h2>
-                </div>
-                <h4><%= t "view.books.show.no_category" %></h4>
-                <% end %>
               </div>
             </div>
           </div>

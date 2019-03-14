@@ -57,12 +57,10 @@
               <%= link_to image_tag("logo.png", alt: "company name here") %>
             </a></strong>
             <div class="tg-searchbox">
-              <form class="tg-formtheme tg-formsearch">
-                <fieldset>
-                  <input type="text" name="search" class="typeahead form-control" placeholder="Search by title, author, keyword, ISBN...">
-                  <button type="submit"><i class="icon-search"></i></button>
-                </fieldset>
-              </form>
+              <%= form_for "", url: books_find_path, role: "search",
+              method: :get do %>
+                <%= text_field_tag :search, @search_term, placeholder: t("view.books.show.search") %>
+              <% end %>
             </div>
           </div>
         </div>

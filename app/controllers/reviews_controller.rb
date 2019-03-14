@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
       flash[:success] = t "controller.reviews.create_review"
       redirect_to book_path(@book)
     else
-      flash[:danger] = t "controller.reviews.create_review_faild"
+      flash[:danger] = t "controller.reviews.create_review_fail"
       render :new
     end
   end
@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
       flash[:success] = t "controller.reviews.update_review"
       redirect_to book_path(@book)
     else
-      flash[:danger] = t "controller.reviews.update_review_faild"
+      flash[:danger] = t "controller.reviews.update_review_fail"
       render :edit
     end
   end
@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
       flash[:success] = t "controller.reviews.delete_reivew"
       redirect_to book_path(@book)
     else
-      flash[:danger] = t "controller.reviews.delete_review_faild"
+      flash[:danger] = t "controller.reviews.delete_review_fail"
       redirect_to root_path
     end
   end
@@ -52,14 +52,14 @@ class ReviewsController < ApplicationController
   def load_book
     @book = Book.find_by id: params[:book_id]
     return if @book
-    flash[:danger] = t "controller.reviews.no_data_book"
+    flash[:danger] = t "controller.no_data_book"
     redirect_to root_path
   end
 
   def load_review
     @review = Review.find_by id: params[:id]
     return if @review
-    flash[:danger] = t "controller.reviews.no_data_review"
+    flash[:danger] = t "controller.no_data_review"
     redirect_to root_path
   end
 
