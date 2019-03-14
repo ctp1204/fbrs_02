@@ -1,181 +1,115 @@
 <%= render "banner" %>
 <div class="tg-sectionspace tg-haslayout">
-        <div class="container">
-          <div class="row">
-            <div id="tg-twocolumns" class="tg-twocolumns">
-              <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
-                <div id="tg-content" class="tg-content">
-                  <div class="tg-featurebook alert" role="alert">
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      <div class="tg-featureditm">
-                        <div class="row">
-                          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
-                            <figure>
-                              <%= link_to image_tag("img-04.png", alt: "image description") %>
-                            </figure>
-                          </div>
-                          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                            <div class="tg-featureditmcontent">
-                              <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
-                              <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Things To Know About Green Flat Design</a></h3>
-                              </div>
-                              <span class="tg-bookwriter">By: <a href="javascript:void(0);">Farrah Whisenhunt</a></span>
-                              <span class="tg-stars"><span></span></span>
-                              <div class="tg-priceandbtn">
-                                <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
-                                  <i class="fa fa-shopping-basket"></i>
-                                  <em>Read Learn</em>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+  <div class="container">
+    <div class="row">
+      <div id="tg-twocolumns" class="tg-twocolumns">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
+          <div id="tg-content" class="tg-content">
+            <div class="tg-featurebook alert" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div class="tg-featureditm">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
+                    <figure>
+                      <%= link_to image_tag("img-04.png", alt: "image description") %>
+                    </figure>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="tg-featureditmcontent">
+                      <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                      <div class="tg-booktitle">
+                        <h3><a href="javascript:void(0);">Things To Know About Green Flat Design</a></h3>
                       </div>
-                    </div>
-                  <div class="tg-productdetail">
-                    <div class="row">
-                      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                        <div class="tg-postbook">
-                          <figure class="tg-featureimg">
-                            <%= image_tag @book.book_img.url(:book_show), class: "book_show" %>
-                          </figure>
-                          <div class="tg-postbookcontent">
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                              <span>add to wishlist</span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                        <div class="tg-productcontent">
-                          <ul class="tg-bookscategories">
-                            <li><a href="javascript:void(0);"><%= @book.category.name %></a></li>
-                          </ul>
-                          <div class="tg-booktitle">
-                            <h3><%= @book.title %></h3>
-                          </div>
-                          <span class="tg-bookwriter">Author: <%= @book.author %></span>
-                          <span class="tg-bookwriter">By: <%= @book.publisher %></span>
-                          <span class="tg-stars"><span></span></span>
-                          <span class="tg-addreviews"><a href="javascript:void(0);">Add Your Review</a></span>
-                          <div class="tg-description">
-                            <p><%= @book.description %> <a href="javascript:void(0);">More</a></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tg-productdescription">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <div class="tg-sectionhead">
-
-                          </div>
-                          <ul class="tg-themetabs" role="tablist">
-                            <li role="presentation" class="active">
-                              <a href="#description" data-toggle="tab">Description</a></li>
-                            <li role="presentation"><a href="#review" data-toggle="tab">Reviews</a></li>
-                          </ul>
-                          <div class="tg-tab-content tab-content">
-                            <div role="tabpanel" class="tg-tab-pane tab-pane active" id="description">
-                              <div class="tg-description">
-                                <p><%= @book.content %></p>
-                              </div>
-                            </div>
-                            <div role="tabpanel" class="tg-tab-pane tab-pane" id="review">
-                              <div class="tg-description">
-                                <p>#Comment & Reply</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tg-aboutauthor">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <div class="tg-sectionhead">
-                            <h2>About Author</h2>
-                          </div>
-                          <div class="tg-authorbox">
-                            <figure class="tg-authorimg">
-                              <%= link_to image_tag("author/imag-24.jpg", alt: "image description") %>
-                            </figure>
-                            <div class="tg-authorinfo">
-                              <div class="tg-authorhead">
-                                <div class="tg-leftarea">
-                                  <div class="tg-authorname">
-                                    <h2>Kathrine Culbertson</h2>
-                                    <span>Author Since: June 27, 2017</span>
-                                  </div>
-                                </div>
-                                <div class="tg-rightarea">
-                                  <ul class="tg-socialicons">
-                                    <li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                    <li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                                    <li class="tg-googleplus"><a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a></li>
-                                    <li class="tg-rss"><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="tg-description">
-                                <p>Laborum sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis etation.</p>
-                              </div>
-                              <a class="tg-btn tg-active" href="javascript:void(0);">View All Books</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tg-relatedproducts">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <div class="tg-sectionhead">
-                            <h2><span>Related Products</span>You May Also Like</h2>
-                            <a class="tg-btn" href="javascript:void(0);">View All</a>
-                          </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <div id="tg-relatedproductslider" class="tg-relatedproductslider tg-relatedbooks owl-carousel">
-                            <div class="item">
-                              <div class="tg-postbook">
-                                <figure class="tg-featureimg">
-                                  <div class="tg-bookimg">
-                                    <div class="tg-frontcover">
-                                      <%= link_to image_tag("books/img-01.jpg", alt: "image description") %>
-
-                                    </div>
-                                    <div class="tg-backcover">
-                                      <%= link_to image_tag("books/img-01.jpg", alt: "image description") %>
-                                    </div>
-                                  </div>
-                                  <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                    <i class="icon-heart"></i>
-                                    <span>add to wishlist</span>
-                                  </a>
-                                </figure>
-                                <div class="tg-postbookcontent">
-                                  <ul class="tg-bookscategories">
-                                    <li><a href="javascript:void(0);">Adventure</a></li>
-                                    <li><a href="javascript:void(0);">Fun</a></li>
-                                  </ul>
-                                  <div class="tg-themetagbox"></div>
-                                  <div class="tg-booktitle">
-                                    <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                                  </div>
-                                  <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                                  <span class="tg-stars"><span></span></span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      <span class="tg-bookwriter">By: <a href="javascript:void(0);">Farrah Whisenhunt</a></span>
+                      <span class="tg-stars"><span></span></span>
+                      <div class="tg-priceandbtn">
+                        <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
+                          <i class="fa fa-shopping-basket"></i>
+                          <em>Read Learn</em>
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
-                <%= render "left" %>
+            </div>
+            <div class="tg-productdetail">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="tg-postbook">
+                    <figure class="tg-featureimg">
+                      <%= image_tag @book.book_img.url(:book_show), class: "book_show" %>
+                    </figure>
+                    <div class="tg-postbookcontent">
+                      <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                        <span>add to wishlist</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                  <div class="tg-productcontent">
+                    <ul class="tg-bookscategories">
+                      <li><a href="javascript:void(0);"><%= @book.category.name %></a></li>
+                    </ul>
+                    <div class="tg-booktitle">
+                      <h3><%= @book.title %></h3>
+                    </div>
+                    <span class="tg-bookwriter">Author: <%= @book.author %></span>
+                    <span class="tg-bookwriter">By: <%= @book.publisher %></span>
+                    <span class="tg-stars"><span></span></span>
+                    <span class="tg-addreviews"><a href="javascript:void(0);">Add Your Review</a></span>
+                    <div class="tg-description">
+                      <p><%= @book.description %> <a href="javascript:void(0);">More</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="tg-productdescription">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="tg-sectionhead">
+
+                    </div>
+                    <ul class="tg-themetabs" role="tablist">
+                      <li role="presentation" class="active">
+                        <a href="#description" data-toggle="tab">Description</a></li>
+                        <li role="presentation"><a href="#review" data-toggle="tab">Reviews</a></li>
+                      </ul>
+                      <div class="tg-tab-content tab-content">
+                        <div role="tabpanel" class="tg-tab-pane tab-pane active" id="description">
+                          <div class="tg-description">
+                            <p><%= @book.content %></p>
+                          </div>
+                        </div>
+                        <div role="tabpanel" class="tg-tab-pane tab-pane" id="review">
+                          <div class="tg-description">
+                            <p>#Comment & Reply</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <% if @books.any? %>
+                  <div class="tg-sectionhead">
+                    <h2><span>News Books</span>Related Category</h2>
+                  </div>
+                  <%= render @books %>
+                  <% else %>
+                  <div class="tg-sectionhead">
+                    <h2><span>Related Books</span>You May Also Like</h2>
+                  </div>
+                  <h4>There are no books currently in this category</h4>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
+            <%= render "left" %>
+          </div>
         </div>
       </div>
+    </div>
+  </div>

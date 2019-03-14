@@ -13,3 +13,11 @@ book:
   max_length: 50
 book_index: "250x350"
 book_show: "325x475"
+helpers:
+  user:
+    size: 80
+controllers:
+  book:
+    index_page: 3
+models:
+  limit: 4

@@ -12,7 +12,6 @@ class User < ApplicationRecord
    foreign_key: :followed_id, dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-
   before_save :downcase_email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :name,  presence: true, length:
@@ -23,4 +22,10 @@ class User < ApplicationRecord
   validates :password, presence: true, length:
     {minimum: Settings.user.password.min_length}, allow_nil: true
   has_secure_password
+
+  private
+
+  def downcase_email
+    self.email = email.downcase
+  end
 end

@@ -3,7 +3,6 @@ class CreateBooks < ActiveRecord::Migration[5.2]
     create_table :books do |t|
       t.references :category, foreign_key: true
       t.string :title
-      t.date :publish_date
       t.text :content
       t.text :description
       t.string :author
