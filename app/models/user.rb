@@ -18,6 +18,7 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
   scope :activated, ->{where activated: true}
+  scope :sort_by_created_at, ->{order created_at: :DESC}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :name,  presence: true, length:
     {maximum: Settings.user.name.max_length}

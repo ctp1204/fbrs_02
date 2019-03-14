@@ -231,8 +231,15 @@ your password will stay as it is."
         add_book: "Add Book"
       form:
         book_title: "Book Title"
-      categories:
-        delete: " Delete"
-        edit: "Sửa Danh Mục"
-        name: "Tên Danh Mục"
-        add_category: "Add Category"
+    categories:
+      delete: " Delete"
+      edit: "Sửa Danh Mục"
+      name: "Tên Danh Mục"
+      add_category: "Add Category"
+    users:
+      delete: " Delete"
+      id: "ID"
+      user_name: "User Name"
+      email: "Email"
+      action: "Chức Năng"
+      user: "Quản lý người dùng"

@@ -1,6 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   layout "admin"
-  before_action :find_category, except: %i(index new create)
+  before_action :find_category, only: :destroy
 
   def index
     @categories = Category.sort_by_name.paginate page: params[:page],
