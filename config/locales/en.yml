@@ -5,6 +5,20 @@ en:
   layouts:
     application:
       app: "application"
+    header:
+      contact: "Contact"
+      help: "Help"
+      login: "Login"
+      account: "Account"
+      profile: "Profile"
+      setting: "Settings"
+      logout: "Logout"
+      user: "Users"
+      add_book: "AddBook"
+      home: "Home"
+      all_categories: "All Categories"
+      author: "Authors"
+      latest_book: "Latest Book"
   deleted: "Book deleted"
   un_delete: "unsuccessfully_book"
   books:
@@ -25,6 +39,9 @@ en:
     user:
       create_user: "Welcome to the Sample App!"
       find_user_error: "Sorry, no data found user"
+    sessions:
+      error_login: "Invalid email/password combination"
+      error_load_user: "Sorry, email does not exist"
   view:
     users:
       new:
@@ -42,7 +59,12 @@ en:
         nostrud exercitation ullamcoiars nisiuip commodo consequat aute irure
         dolor in aprehenderit aveli esseati cillum dolor fugiat nulla pariatur
         cepteur sint occaecat cupidatat."
-
+    sessions:
+      login: "Log in"
+      signup : "Sign up now!"
+      error_login: "Invalid email/password combination"
+      error_load_email: "Sorry, no data found email"
+      new_user: "New user"
   activerecord:
     attributes:
       user:

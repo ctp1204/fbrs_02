@@ -22,7 +22,6 @@
           <%=link_to book.category.name, books_path(category: book.category.name) %>
         </li>
       </ul>
-
       <div class="tg-booktitle">
         <h3><a href="/books/<%= book.id %>?category=<%= book.category.id %>">
           <%= book.title %></a></h3>
@@ -30,4 +29,3 @@
     </div>
   </div>
 </div>
-
