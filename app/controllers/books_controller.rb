@@ -10,7 +10,10 @@ class BooksController < ApplicationController
       per_page: Settings.controllers.book.index_page
   end
 
-  def show; end
+  def show
+    return unless @book.reviews
+    @book.rate_points = @book.reviews.average(:rate)
+  end
 
   def find; end
 
@@ -65,7 +68,7 @@ class BooksController < ApplicationController
   def logged_in_user
     return if logged_in?
     store_location
-    flash[:danger] = t "controller.book.please_login"
+    flash[:danger] = t "please_login"
     redirect_to login_path
   end
 

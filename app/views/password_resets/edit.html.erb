@@ -1,5 +1,5 @@
-<% provide :title, t("pass_reset.edit.reset_pass") %>
-<h1><%= t "pass_reset.edit.reset_pass" %></h1>
+<% provide :title, t("view.password_reset.edit.reset") %>
+<h1><%= t "view.password_reset.edit.reset" %></h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -14,7 +14,7 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
 
-      <%= f.submit t("pass_reset.edit.update_pass"), class: "btn btn-primary" %>
+      <%= f.submit t("view.password_reset.edit.update"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
