@@ -5,7 +5,6 @@ class Book < ApplicationRecord
   scope :newest, ->{order created_at: :desc}
   scope :by_category,
     ->(category_id){where category_id: category_id if category_id.present?}
-
   has_attached_file :book_img, styles:
    {book_index: Settings.book_index, book_show: Settings.book_show},
    default_url: "/images/:style/missing.png"
