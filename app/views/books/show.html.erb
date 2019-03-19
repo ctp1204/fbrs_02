@@ -57,6 +57,9 @@
                     <h4><%= t "view.books.show.avg_rating" %> </h4>
                     <div class="average_review-rating" data-score="<%= @book.rate_points %>"></div>
                     <span><%= t "view.books.show.base" %> <%= @book.reviews.count %> reviews</span>
+                    <div>
+                      <%= link_to t("view.books.show.addreview"), new_book_review_path(@book) %>
+                    </div>
                     <span>
                     <%= link_to t("view.books.show.back"), root_path %>
                     <% if logged_in? && current_user.admin %>
@@ -88,7 +91,6 @@
                       <div role="tabpanel" class="tg-tab-pane tab-pane active" id="review">
                         <div class="tg-description">
                           <%= render @book.reviews %>
-                          <%= link_to t("view.books.show.addreview"), new_book_review_path(@book) %>
                         </div>
                       </div>
                     </div>
