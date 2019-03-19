@@ -14,4 +14,21 @@
           class: "btn btn-custom" %>
       </div>
   <% end %>
+  <% if review.comments.any? %>
+    <% review.comments.each do |comment| %>
+      <%= render partial: "comments/comment", locals: {comment: comment,
+        book: review.book} %>
+    <% end %>
+  <% end %>
+  <%= simple_form_for([@book, review, review.comments.build]) do |f| %>
+    <div class="comment">
+      <div class="content">
+        <%= f.input :content, class: "cmt" %>
+      </div>
+      <div class="btn-custom3">
+        <%= f.button :submit, class: "btn-custom3" %>
+      </div>
+    </div>
+  <% end %>
 </div>
+

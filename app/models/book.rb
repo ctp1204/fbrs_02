@@ -2,9 +2,6 @@ class Book < ApplicationRecord
   belongs_to :category
   has_many :marks, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  scope :newest, ->{order created_at: :desc}
-  scope :by_category,
-    ->(category_id){where category_id: category_id if category_id.present?}
   has_attached_file :book_img, styles:
    {book_index: Settings.book_index, book_show: Settings.book_show},
    default_url: "/images/:style/missing.png"
@@ -13,4 +10,12 @@ class Book < ApplicationRecord
    uniqueness: {case_sensitive: false}
   validates :author, presence: true, length: {maximum: Settings.book.max_length}
   delegate :name, to: :category, prefix: true, allow_nil: true
+
+  scope :newest, ->{order created_at: :desc}
+  scope :by_category,
+    ->(category_id){where category_id: category_id if category_id.present?}
+
+  scope :by_author_title, ->(key_search) do
+    where "title LIKE '%?%' OR author LIKE '%?%'", key_search, key_search if key_search.present?
+  end
 end

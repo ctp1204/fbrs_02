@@ -37,6 +37,9 @@ en:
       status: "The form contains"
       errors: "error"
   controller:
+    no_data_book: "Sorry, no data book"
+    no_data_review: "Sorry, no data review"
+    no_data_comment: "Sorry, no data comment"
     category: "Category not found!"
     update: "Update success"
     book:
@@ -61,13 +64,16 @@ en:
       email_not_found: "Email address not found"
     reviews:
       create_review: "Created a new review"
-      create_review_faild: "Create reivew faild"
+      create_review_fail: "Create reivew fail"
       update_review: "Updated a new review"
-      update_review_faild: "Updated review faild"
+      update_review_fail: "Updated review fail"
       delete_reivew: "Delete review success"
-      delete_review_faild: "Delete review faild"
-      no_data_book: "Sorry, no data book"
-      no_data_review: "Sorry, no data review"
+      delete_review_fail: "Delete review fail"
+    comments:
+      create_comment: "Created a new review"
+      create_comment_fail: "Create reivew fail"
+      delete_comment: "Delete comment success"
+      delete_comment_fail: "Delete comment fail"
   view:
     users:
       new:
@@ -103,12 +109,13 @@ your password will stay as it is."
         avg_rating: "Average Rating:"
         base: "Based on:"
         review: "reviews"
-        new_book: "News Books"
+        new_book: "New Books"
         relate: "Related Category"
         relate_book: "Related Books"
         also_like: "You May Also Like"
         no_category: "There are no books currently in this category"
         addreview: "AddReview"
+        search: "Search title, author ..."
       bookslider:
         people_choice: "People’s Choice"
         bestselling: "Bestselling Books"
@@ -149,6 +156,8 @@ your password will stay as it is."
       edit: "Edit"
       delete: "Delete"
       sure: "Are you sure ? "
+      ago: "ago"
+      cmt: "Comment"
   activerecord:
     attributes:
       user:

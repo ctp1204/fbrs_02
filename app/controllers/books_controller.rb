@@ -17,6 +17,10 @@ class BooksController < ApplicationController
 
   def find; end
 
+  def search
+    @books = Book.by_author_title(params[:search])
+  end
+
   def new
     @book = Book.new
   end
@@ -59,9 +63,9 @@ class BooksController < ApplicationController
   end
 
   def load_book
-    @book = Book.find_by_id params[:id]
+    @book = Book.find_by id: params[:id]
     return if @book
-    flash[:danger] = t "messenger"
+    flash[:danger] = t "controller.no_data_book"
     redirect_to books_path
   end
 

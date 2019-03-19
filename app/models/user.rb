@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :books
   # has_many :likes, dependent: :destroy
-  # has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy
   # has_many :activities, dependent: :destroy
   # has_many :marks, dependent: :destroy
   # has_many :suggests, dependent: :destroy
@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   scope :sort_by_name, ->{order :name}
+
   before_save :downcase_email
   before_create :create_activation_digest
   scope :activated, ->{where activated: true}
