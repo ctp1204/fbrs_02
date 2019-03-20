@@ -43,6 +43,9 @@
                       <%= image_tag @book.book_img.url(:book_show), class: "book_show" %>
                     </figure>
                   </div>
+                  <div class="add_review">
+                    <%= link_to t("view.books.show.addreview"), new_book_review_path(@book) %>
+                  </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                   <div class="tg-productcontent">
@@ -56,12 +59,27 @@
                     <span class="tg-bookwriter"><%= t "view.books.show.by" %> <%= @book.publisher %></span>
                     <h4><%= t "view.books.show.avg_rating" %> </h4>
                     <div class="average_review-rating" data-score="<%= @book.rate_points %>"></div>
-                    <span><%= t "view.books.show.base" %> <%= @book.reviews.count %> reviews</span>
-                    <div>
-                      <%= link_to t("view.books.show.addreview"), new_book_review_path(@book) %>
-                    </div>
+                    <div class="base"><%= t "view.books.show.base" %> <%= @book.reviews.count %> reviews</div>
                     <span>
-                    <%= link_to t("view.books.show.back"), root_path %>
+                    <div class="like-unlike">
+                      <div class="count_like">
+                        <i><b><%= @book.likes.count %></b> <i class="fas fa-thumbs-up"></i></i>
+                      </div>
+                      <% if logged_in? %>
+                        <% if like? @book %>
+                          <%= link_to like_path(book_id: @book.id), method: :delete,
+                            class: "btn btn-danger" do %>
+                            <%= t "view.books.show.unlike" %>
+                          <% end %>
+                        <% else %>
+                          <%= render "likes/like" %>
+                        <% end %>
+                      <% else %>
+                        <%= link_to login_path do %>
+                          <%= render "likes/like" %>
+                        <% end %>
+                      <% end %>
+                    </div>
                     <% if logged_in? && current_user.admin %>
                       <%= link_to t("view.books.show.edit_book"), edit_book_path(@book) %>
                       <%= link_to t("view.books.show.delete"), book_path(@book), method: :delete, data:
