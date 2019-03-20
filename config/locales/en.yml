@@ -1,4 +1,5 @@
 en:
+  count_review: "%{count} reviews"
   title: "Book Review System"
   messenger: "sorry, Not found !"
   no_data: "Sorrt, data not found"
@@ -25,6 +26,17 @@ en:
       author: "Authors"
       latest_book: "Latest Book"
       suggest: Suggest
+    header_admin:
+      sun*: "Sun Asterisk"
+      hi: "Xin Chào, "
+    left_admin:
+      home: "Trang Chủ"
+      category: "Quản Lý Danh Mục"
+      book: " Quản Lý Truyện"
+      user: "Quản Lý Người Dùng"
+      suggest: "Quản Lý yêu Cầu"
+      comment: "Quản Lý Comment"
+      reply: "Reply"
   deleted: "Book deleted"
   un_delete: "unsuccessfully_book"
   books:
@@ -188,3 +200,12 @@ your password will stay as it is."
         password: "Password"
         password_confirmation: "Password Confirmation"
         role: "Role"
+  admin:
+    static_pages:
+      index:
+        admin_layout: "TRANG QUẢN TRỊ VIÊN"
+        category: "Quản lý danh mục"
+        book: "Quản lý truyện"
+        user: "Quản lý người dùng"
+        suggest: "Quản lý yêu cầu"
+        comment: " comment/reply"
