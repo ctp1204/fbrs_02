@@ -1,0 +1,47 @@
+<main id="tg-main" class="tg-main tg-haslayout">
+  <nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+      <ul class="nav" id="main-menu">
+        <li class="text-center">
+          <%= link_to image_tag("find_user.png", class: "user-image img-responsive") %>
+        </li>
+        <li>
+          <a href="/admin/">
+            <i class="fa fa-home fa-3x"></i> <%= t ".home" %>
+          </a>
+        </li>
+        <li>
+          <a href="/admin/categories" >
+            <i class="fa fa-bar-chart-o fa-3x"></i><%= t ".category" %>
+          </a>
+        </li>
+        <li>
+          <a class="" href="/admin/books">
+            <i class="fa fa-qrcode fa-3x"></i> <%= t ".book" %>
+          </a>
+        </li>
+        <li>
+          <a class="" href="/admin/users">
+            <i class="fa fa-sitemap fa-3x"></i> <%= t ".user" %>
+          </a>
+        </li>
+        <li>
+          <a class="" href="/admin/suggests">
+            <i class="fa fa-sitemap fa-3x"></i><%= t ".suggest" %>
+          </a>
+        </li>
+        <li class="menu-2 ">
+          <a class="" href="#">
+            <i class="fa fa-sitemap fa-3x"></i><%= t ".comment" %>
+          </a>
+          <ul>
+            <li>
+              <a class="" href="#"> <i class="fa fa-sitemap fa-2x"></i><%= t ".reply" %>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</main>

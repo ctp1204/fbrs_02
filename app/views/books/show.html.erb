@@ -55,15 +55,19 @@
                     <div class="tg-booktitle">
                       <h3><%= @book.title %></h3>
                     </div>
-                    <span class="tg-bookwriter"><%= t "view.books.show.author" %> <%= @book.author %></span>
-                    <span class="tg-bookwriter"><%= t "view.books.show.by" %> <%= @book.publisher %></span>
+                    <span class="tg-bookwriter"><%= t "view.books.show.author" %>
+                      <%= @book.author %>
+                    </span>
+                    <span class="tg-bookwriter"><%= t "view.books.show.by" %>
+                      <%= @book.publisher %>
+                    </span>
                     <h4><%= t "view.books.show.avg_rating" %> </h4>
-                    <div class="average_review-rating" data-score="<%= @book.rate_points %>"></div>
-                    <div class="base"><%= t "view.books.show.base" %> <%= @book.reviews.count %> reviews</div>
+                    <div class="average_review-rating" data-score="<%= @book.rate_points %>">
+                    </div>
                     <span>
                     <div class="like-unlike">
                       <div class="count_like">
-                        <i><b><%= @book.likes.count %></b> <i class="fas fa-thumbs-up"></i></i>
+                        <i><b><%= @book.likes.size %></b> <i class="fas fa-thumbs-up"></i></i>
                       </div>
                       <% if logged_in? %>
                         <% if like? @book %>
@@ -80,11 +84,9 @@
                         <% end %>
                       <% end %>
                     </div>
-                    <% if logged_in? && current_user.admin %>
-                      <%= link_to t("view.books.show.edit_book"), edit_book_path(@book) %>
-                      <%= link_to t("view.books.show.delete"), book_path(@book), method: :delete, data:
-                        { confirm: t("view.books.show.sure") } %>
-                    <% end %>
+                    <div><%= t "view.books.show.base" %>
+                      <%= t("count_review", count: @book.reviews.size) %>
+                    </div>
                     </span>
                   </div>
                 </div>

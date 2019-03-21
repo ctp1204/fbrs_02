@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "admin/admin_application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "admin/admin_application", "data-turbolinks-track": "reload" %>
+  </head>
+  <body>
+    <%= render "layouts/header_admin" %>
+    <%= render "layouts/left_admin" %>
+    <%= yield %>
+  </body>
+</html>
