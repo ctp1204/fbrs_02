@@ -1,0 +1,27 @@
+<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+  <thead>
+    <tr>
+      <th><%= t ".id" %></th>
+      <th class="name"><%= t ".name" %></th>
+      <th><%= t ".category" %></th>
+      <th><%= t ".image" %></th>
+      <th class="action"><%= t ".action" %></th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr class="gradeX">
+        <td><%= book.id %></td>
+        <td><%= book.title %></td>
+        <td><%= book.category_name %></td>
+        <td class="center">
+            <%= image_tag book.book_img.url(:book_show), class: "original" %>
+        </td>
+        <td>
+          <%= link_to t(".edit"), edit_admin_book_path(book),
+            class: "fa fa-edit btn btn-primary " %>
+          <%= link_to t(".delete"), admin_book_path(book), method: :delete,
+            data:{confirm: t(".sure")}, class: "fa fa-trash btn btn-danger " %>
+        </td>
+      </tr>
+    </tbody>
+</table>

@@ -8,7 +8,7 @@
         <div class="tg-formtheme tg-formnewsletter">
           <%= simple_form_for @book, html: {multipart: true} do |f| %>
           <%= f.file_field :book_img %>
-          <%= f.select :category_id, cats %>
+          <%= f.select :category_id, load_categories_for_selectbox %>
           <%= f.input :title, label:  (t".book_title") %>
           <%= f.input :content %>
           <%= f.input :description %>

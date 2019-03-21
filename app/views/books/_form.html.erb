@@ -1,5 +1,5 @@
 <%= simple_form_for @book, html: {multipart: true} do |f| %>
-<%= f.select :category_id, options_for_select(cats),
+<%= f.select :category_id, options_for_select(load_categories_for_selectbox),
  prompt: (t".select") %>
 <%= f.file_field :book_img %>
 <%= f.input :title, label:  t(".book_title") %>

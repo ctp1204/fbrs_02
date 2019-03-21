@@ -31,4 +31,4 @@ view:
   users:
     size: 50
     size_follow: 30
-per_page: 5
+per_page: 7

@@ -209,3 +209,23 @@ your password will stay as it is."
         user: "Quản lý người dùng"
         suggest: "Quản lý yêu cầu"
         comment: " comment/reply"
+    books:
+      book:
+        sure: "Are you sure!"
+        edit: " Edit"
+        delete: " Delete"
+        name: "Tên"
+        view: "Lượt xem"
+        image: "Hình ảnh"
+        action: "Chức năng"
+        category: "Danh mục"
+        id: "ID"
+      edit:
+        edit_book: "Edit Book"
+      index:
+        add: "ADD"
+        category: "Quản lý danh mục"
+      new:
+        add_book: "Add Book"
+      form:
+        book_title: "Book Title"
