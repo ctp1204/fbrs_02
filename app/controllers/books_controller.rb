@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
-  before_action :logged_in_user, except: %i(index show find)
-  before_action :load_book, :build_like, except: %i(index find new create)
-  before_action :admin_user, except: %i(index show find)
-  before_action :book_by_category, only: %i(show find)
+  before_action :logged_in_user, except: %i(index show filter)
+  before_action :load_book, :build_like, except: %i(index filter create)
+  before_action :admin_user, except: %i(index show filter)
+  before_action :book_by_category, only: %i(show filter)
 
   def index
     @books = Book.newest
@@ -15,44 +15,10 @@ class BooksController < ApplicationController
     @book.rate_points = @book.reviews.average(:rate)
   end
 
-  def find; end
+  def filter; end
 
   def search
     @books = Book.by_author_title(params[:search])
-  end
-
-  def new
-    @book = Book.new
-  end
-
-  def create
-    @book = Book.new(book_params)
-    if @book.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
-
-  def edit; end
-
-  def update
-    if @book.update(book_params)
-      flash[:success] = t ".update"
-      redirect_to book_path(@book)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    if @book.destroy
-      flash[:success] = t "deleted"
-      redirect_to books_path
-    else
-      flash[:danger] = t "un_delete"
-      redirect_to root_path
-    end
   end
 
   private
