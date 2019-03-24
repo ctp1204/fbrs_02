@@ -14,6 +14,6 @@
     <div class="khoi">
       <%=link_to t( "layouts.header.logout"), logout_path, method: :delete, class: "btn btn-success btn-block square-btn-adjust" %>
     </div>
-    <div class="khoi"> Xin chào, <b></b> &nbsp; </div>
+    <div class="khoi"> Xin chào, <b><%= current_user.name %></b> &nbsp; </div>
   </nav>
 </div>

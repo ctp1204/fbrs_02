@@ -1,0 +1,9 @@
+<tr class=" gradeX">
+  <td id="catId"><%= user.id %></td>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td class="center">
+    <%= link_to t(".delete"), admin_user_path(user), method: :delete,
+     data:{confirm: t("sure")}, class: "fa fa-trash btn btn-danger " %>
+  </td>
+</tr>
