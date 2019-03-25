@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :likes
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :relationships, only: [:create, :destroy]
+  resources :suggests
 
   namespace :admin do
     root "static_pages#index"
