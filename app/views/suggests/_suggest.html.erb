@@ -1,0 +1,15 @@
+<tr>
+  <td><%= suggest.id%></td>
+  <td><%= suggest.title %></td>
+  <td><%= suggest.categories %></td>
+  <td><%= suggest.author %></td>
+  <td><%= suggest.created_at %></td>
+  <td><%= suggest.status %></td>
+  <td>
+    <% if suggest.waiting? %>
+      <%= link_to t(".delete"), suggest_path(suggest), method: :delete,
+        data: {confirm: t("sure", name: suggest.title)},
+        class: "btn btn-danger" %>
+    <% end %>
+  </td>
+</tr>

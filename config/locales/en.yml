@@ -6,7 +6,7 @@ en:
   please_login: "Please Log in."
   hello: "Hello world"
   pass_reset: "Password reset"
-  sure: "You a sure?"
+  sure: "You a sure!"
   error: "An error has occurred, please try again!"
   layouts:
     application:
@@ -37,8 +37,20 @@ en:
       suggest: "Quản Lý yêu Cầu"
       comment: "Quản Lý Comment"
       reply: "Reply"
+      suggest: "My suggest"
   deleted: "Book deleted"
   un_delete: "unsuccessfully_book"
+  suggests:
+    index:
+      book_name: "Book Name"
+      book_category: "Book Category"
+      author: "Author"
+      created_at: "Created_at"
+      status: "Status"
+      action: "Action"
+    new:
+      send: "Send"
+      back: "Back"
   books:
     banner:
       all_book: "All Books"
@@ -53,10 +65,13 @@ en:
       errors: "error"
   controller:
     no_data_book: "Sorry, no data book"
+    no_data_rq: "Sorry, no data request"
     no_data_review: "Sorry, no data review"
     no_data_comment: "Sorry, no data comment"
     category: "Category not found!"
     update: "Update success"
+    success_rq: "success request"
+    can't_rq: "can't request"
     book:
       please_login: "Please Log in."
     user:
