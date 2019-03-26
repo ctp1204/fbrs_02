@@ -239,7 +239,7 @@ input {
 }
 /* Users index */
 $silver: #ccc;
-
+$silver-review: #efeeeeb0;
 .users {
   list-style: none;
   margin: 0;
@@ -315,4 +315,32 @@ a.btn.btn-danger {
 }
 .tg-postbook {
     margin-bottom: 12px;
+}
+a#likes{
+  width: 100%;
+}
+i.cr-review {
+    font-size: 13px;
+    color: #4c4949;
+}
+.review-rating {
+    margin: -10px 0px 3px -1px;
+}
+.review-comment-content {
+    background: $silver-review;
+    padding: 5px 10px 5px 15px;
+    border-radius: 6px;
+}
+.abc {
+    background-color: #3578e5;
+    bottom: 0;
+    content: '';
+    left: 43px;
+    position: absolute;
+    top: 524px;
+    width: 3px;
+    bottom: 955px;
+}
+textarea#review_content {
+    height: 150px;
 }

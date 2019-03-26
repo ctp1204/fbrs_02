@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
-  before_action :logged_in_user, except: %i(index show filter)
-  before_action :load_book, :build_like, except: %i(index filter create)
-  before_action :admin_user, except: %i(index show filter)
-  before_action :book_by_category, only: %i(show filter)
+  before_action :authenticate_user!, except: %i(index show find search searchlike)
+  before_action :load_book, :build_like, :build_review, only: %i(show)
+  before_action :book_by_category, except: %i(index)
+  before_action :book_by_like, only: %i(searchlike)
 
   def index
     @books = Book.newest
@@ -11,14 +11,20 @@ class BooksController < ApplicationController
   end
 
   def show
-    return unless @book.reviews
+    @reviews = @book.reviews.newest_review.paginate page: params[:page],
+      per_page: Settings.controllers.book.index_page
+    return unless @reviews
     @book.rate_points = @book.reviews.average(:rate)
   end
 
-  def filter; end
+  def find; end
 
   def search
-    @books = Book.by_author_title(params[:search])
+    @books = Book.by_author_title_book(params[:search])
+  end
+
+  def searchlike
+    @searchlike = Book.by_like_book(@book_like)
   end
 
   private
@@ -32,6 +38,10 @@ class BooksController < ApplicationController
     @like = @book.likes.new
   end
 
+  def build_review
+    @review = @book.reviews.build
+  end
+
   def load_book
     @book = Book.find_by id: params[:id]
     return if @book
@@ -39,18 +49,11 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "please_login"
-    redirect_to login_path
-  end
-
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
-  end
-
   def book_by_category
     @books = Book.by_category(params[:category]).limit Settings.models.limit
+  end
+
+  def book_by_like
+    @book_like = current_user.likes.pluck(:book_id)
   end
 end

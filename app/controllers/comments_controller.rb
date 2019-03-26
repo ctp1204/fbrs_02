@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user, only: %i(new create)
+  before_action :logged_in_user, except: %i(destroy)
   before_action :load_book
   before_action :load_review
   before_action :load_comment, except: %i(new create)
@@ -12,8 +12,10 @@ class CommentsController < ApplicationController
     @comment = @review.comments.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      flash[:success] = t "controller.comments.create_comment"
-      redirect_to book_path(@book)
+      respond_to do |format|
+        format.html{ redirect_to request.referrer }
+        format.js
+      end
     else
       flash[:danger] = t "controller.comments.create_comment_fail"
       render :new
@@ -22,8 +24,10 @@ class CommentsController < ApplicationController
 
   def destroy
     if @comment.destroy
-      flash[:success] = t "controller.comments.delete_comment"
-      redirect_to book_path(@book)
+      respond_to do |format|
+        format.html{ redirect_to request.referrer }
+        format.js
+      end
     else
       flash[:danger] = t "controller.comments.delete_comment_fail"
       redirect_to root_path
@@ -58,9 +62,9 @@ class CommentsController < ApplicationController
   end
 
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
     store_location
     flash[:danger] = t "please_login"
-    redirect_to login_path
+    redirect_to new_user_session_path
   end
 end

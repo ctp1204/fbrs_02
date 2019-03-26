@@ -8,9 +8,9 @@ user:
   pass_rs:
     rs_sent_at: 2
 review:
-  max_length: 140
+  max_length: 300
 comment:
-  max_length: 140
+  max_length: 300
 book:
   max_length: 50
 book_index: "250x350"

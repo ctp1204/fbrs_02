@@ -9,4 +9,5 @@ class Review < ApplicationRecord
    length: {maximum: Settings.review.max_length}
   validates :user_id, presence: true
   validates :book_id, presence: true
+  scope :newest_review, ->{order created_at: :desc}
 end

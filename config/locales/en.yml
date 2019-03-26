@@ -26,6 +26,10 @@ en:
       author: "Authors"
       latest_book: "Latest Book"
       suggest: Suggest
+      searchlike: "List Like"
+      activities: "Activity"
+      admin: "Admin"
+      signup: "Sign Up"
     header_admin:
       sun*: "Sun Asterisk"
       hi: "Xin Chào, "
@@ -83,6 +87,9 @@ en:
       please_login: "Please Log in."
       following: "List Following"
       followers: "List Followers"
+      setuser: "Set user success"
+      setadmin: "Set admin success"
+      nofound: "Sorry. No found"
     sessions:
       error_login: "Invalid email/password combination"
       error_load_user: "Sorry, email does not exist"
@@ -206,7 +213,7 @@ your password will stay as it is."
       delete: "Delete"
       sure: "Are you sure ? "
       ago: "ago"
-      cmt: "Comment"
+      cmt: "comment"
   activerecord:
     attributes:
       user:
