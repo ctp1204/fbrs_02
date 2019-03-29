@@ -152,6 +152,10 @@ en:
       load_like: "Sorry, no like"
     admin:
       fail: "data not found"
+    suggests:
+      rejected: "Offer rejected"
+      fail: "Suggest Fail"
+      loadsuggest: "No found suggest"
   view:
     admin:
       book:
@@ -289,6 +293,17 @@ your password will stay as it is."
         create: "add review to"
     activities:
       index_activity: "List Activities"
+    suggests:
+      index:
+        suggest: "Quan Ly Yeu Cau"
+        id: "ID"
+        title: "Name Book"
+        category: "Category"
+        username: "User Name"
+        status: "Status"
+        action: "Action"
+        accept: "Accept"
+        reject: "Reject"
   activerecord:
     attributes:
       user:
@@ -340,3 +355,13 @@ your password will stay as it is."
       email: "Email"
       action: "Chức Năng"
       user: "Quản lý người dùng"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "too short (minimum %{count} characters)"
+              too_long: "too long (maximun %{count} characters)"
+            name:
+              blank: "can't be blank"

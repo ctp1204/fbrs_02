@@ -49,6 +49,8 @@ gem "will_paginate", "~> 3.1", ">= 3.1.7"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails", require: false
+  gem "rspec-rails"
 end
 
 group :development do
@@ -63,6 +65,7 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "4.0.0.rc.1"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
