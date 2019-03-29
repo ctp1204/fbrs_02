@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user, except: %i(destroy)
+  before_action :require_log_in
   before_action :load_book
   before_action :load_review
   before_action :load_comment, except: %i(new create)
+  authorize_resource
 
   def new
     @comment = Comment.new
@@ -59,12 +60,5 @@ class CommentsController < ApplicationController
     return if @comment
     flash[:danger] = t "controller.no_data_comment"
     redirect_to root_path
-  end
-
-  def logged_in_user
-    return if user_signed_in?
-    store_location
-    flash[:danger] = t "please_login"
-    redirect_to new_user_session_path
   end
 end

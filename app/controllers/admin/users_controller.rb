@@ -1,7 +1,7 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::BaseController
   layout "admin"
-  before_action :is_admin, except: :destroy
-  before_action :load_user, only: %i(update destroy)
+  authorize_resource
+  before_action :load_user, except: :index
 
   def index
     @users = User.sort_by_created_at.paginate page: params[:page],
@@ -48,16 +48,5 @@ class Admin::UsersController < ApplicationController
     return if @user
     flash[:danger] = t "controller.user.find_user_error"
     redirect_to root_path
-  end
-
-  def logged_in_user
-    return if user_signed_in?
-    store_location
-    flash[:danger] = t "controller.book.please_login"
-    redirect_to new_user_session_path
-  end
-
-  def admin_user
-    redirect_to(root_path) unless current_user.admin?
   end
 end

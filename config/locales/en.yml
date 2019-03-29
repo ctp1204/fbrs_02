@@ -11,6 +11,7 @@ en:
   dates:
     formats:
       date_month_year_concise: '%d-%m-%y'
+  no_admin: "There is no access to this page"
   layouts:
     application:
       app: "application"
@@ -82,6 +83,9 @@ en:
     update: "Update success"
     success_rq: "success request"
     can't_rq: "can't request"
+    admin:
+      base:
+        no_admin: "There is no access to this page"
     mailers:
       user_mailer:
         suggest: "Suggest Confirmation"

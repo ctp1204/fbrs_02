@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
-  before_action :logged_in_user, only: %i(new create)
+  before_action :require_log_in
   before_action :load_book
   before_action :build_review
   before_action :load_review, only: %i(destroy)
+  authorize_resource
 
   def new
     @review = Review.new
@@ -57,12 +58,5 @@ class ReviewsController < ApplicationController
     return if @review
     flash[:danger] = t "controller.no_data_review"
     redirect_to root_path
-  end
-
-  def logged_in_user
-    return if user_signed_in?
-    store_location
-    flash[:danger] = t "please_login"
-    redirect_to new_user_session_path
   end
 end

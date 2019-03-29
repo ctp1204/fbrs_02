@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, except: %i(index show find search searchlike)
+  authorize_resource
   before_action :load_book, :build_like, :build_review, only: %i(show)
   before_action :book_by_category, except: %i(index)
   before_action :book_by_like, only: %i(searchlike)

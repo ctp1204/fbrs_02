@@ -1,7 +1,8 @@
 class SuggestsController < ApplicationController
-  before_action :logged_in_user
+  before_action :require_log_in
   before_action :load_suggest, only: :destroy
   before_action :suggest_by_user, only: :index
+  authorize_resource
 
   def index; end
 
@@ -12,7 +13,6 @@ class SuggestsController < ApplicationController
   def create
     @suggest = Suggest.new suggest_params
     if @suggest.save
-      #send mail
       SendEmailJob.set(wait: 10.seconds).perform_later(@suggest)
       flash[:success] = t "suggests.create.success_rq"
       redirect_to suggests_path(user_id: current_user)
@@ -48,12 +48,5 @@ class SuggestsController < ApplicationController
 
   def suggest_by_user
     @suggests = current_user.suggests.newest.by_suggest params[:user_id]
-  end
-
-  def logged_in_user
-    return if user_signed_in?
-    store_location
-    flash[:danger] = t "controller.book.please_login"
-    redirect_to new_user_session_path
   end
 end
