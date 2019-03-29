@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   layout "admin"
+  before_action :is_admin, except: :destroy
   before_action :load_user, only: %i(update destroy)
 
   def index

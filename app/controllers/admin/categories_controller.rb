@@ -1,5 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   layout "admin"
+  before_action :logged_in_user
+  before_action :is_admin, except: :destroy
   before_action :find_category, only: :destroy
 
   def index

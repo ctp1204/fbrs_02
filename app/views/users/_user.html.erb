@@ -1,4 +1,4 @@
 <li>
-  <%= gravatar_for user, size: Settings.view.users.size %>
+  <%= image_tag user.picture.url if user.picture? %>
   <%= link_to user.name, user %>
 </li>
