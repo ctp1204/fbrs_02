@@ -93,9 +93,17 @@ en:
     mailers:
       user_mailer:
         suggest: "Suggest Confirmation"
+    category:
+      restore_category: "Restore category successfully"
+      temporary_category: "Delete category temporary"
+      nofound: "No Found"
     book:
       please_login: "Please Log in."
       error_page: "You do not have access to this page"
+      create_book: "Create book successfully"
+      update_book: "Update book successfully"
+      delete_book: "Delete book successfully"
+      delete_fail: "Delete book fail"
     user:
       create_user: "Welcome to the Sample App!"
       find_user_error: "Sorry, no data found user"
@@ -109,6 +117,7 @@ en:
       setadmin: "Set admin success"
       nofound: "Sorry. No found"
       errors: "ERRORS"
+      create_user: "Create user successfully"
     sessions:
       error_login: "Invalid email/password combination"
       error_load_user: "Sorry, email does not exist"
@@ -148,10 +157,13 @@ en:
         search_author: "Search author ..."
       category:
         search_category: "Search category"
+        delete: "Delete"
+        restore: "Restore"
       user:
         search_user: "Search name user ..."
         search_email: "Search mail ..."
         selection_role: "Selection role"
+        sign_up: "Create User"
       submit_search: "Search"
     shared:
       following: "following"
@@ -209,6 +221,7 @@ your password will stay as it is."
         sure: "Are you sure?"
         author: "Author:"
         by: "By:"
+        published_on: "Published on"
         avg_rating: "Average Rating:"
         base: "Based on:"
         review: "reviews"

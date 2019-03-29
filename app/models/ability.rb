@@ -6,7 +6,6 @@ class Ability
     if user.admin?
       can :manage, :all
       can :destroy, Review
-
     elsif user.user?
       can :read, :all
       can :update, User, user_id: user.id
