@@ -19,9 +19,7 @@ class BooksController < ApplicationController
 
   def find; end
 
-  def search
-    @books = Book.by_author_title_book(params[:search])
-  end
+  def search; end
 
   def searchlike
     @searchlike = Book.by_like_book(@book_like)

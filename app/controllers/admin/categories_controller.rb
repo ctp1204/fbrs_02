@@ -4,7 +4,8 @@ class Admin::CategoriesController < Admin::BaseController
   before_action :find_category, only: :destroy
 
   def index
-    @categories = Category.sort_by_name.paginate page: params[:page],
+    @search_categories = Category.ransack params[:q]
+    @categories = @search_categories.result.sort_by_name.paginate page: params[:page],
      per_page: Settings.per_page
   end
 

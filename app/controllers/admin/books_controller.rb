@@ -4,7 +4,8 @@ class Admin::BooksController < Admin::BaseController
   before_action :load_book, except: %i(index new create)
 
   def index
-    @books = Book.newest.by_category(params[:category_id]).paginate page:
+    @search_book = Book.ransack params[:q]
+    @books = @search_book.result.newest.by_category(params[:category_id]).paginate page:
       params[:page], per_page: Settings.per_page
   end
 

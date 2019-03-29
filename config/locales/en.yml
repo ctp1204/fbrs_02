@@ -34,6 +34,10 @@ en:
       activities: "Activity"
       admin: "Admin"
       signup: "Sign Up"
+      search_book: "Search name book ..."
+      search_category: "Search category ..."
+      search_author: "Search author ..."
+      search: "Search"
     header_admin:
       sun*: "Sun Asterisk"
       hi: "Xin Chào, "
@@ -137,6 +141,18 @@ en:
     admin:
       fail: "data not found"
   view:
+    admin:
+      book:
+        search_book: "Search name book ..."
+        search_category: "Search category ..."
+        search_author: "Search author ..."
+      category:
+        search_category: "Search category"
+      user:
+        search_user: "Search name user ..."
+        search_email: "Search mail ..."
+        selection_role: "Selection role"
+      submit_search: "Search"
     shared:
       following: "following"
       followers: "followers"
@@ -145,6 +161,7 @@ en:
         download: "Download"
         users_xls: "To Excel"
         users_csv: "To CSV"
+        adduser: "ADD USER"
       new:
         sign_up: "Sign up"
         create_user: "Create my account"
@@ -178,6 +195,7 @@ your password will stay as it is."
         author: "Author"
         created_at: "Create at"
         status: "Status"
+        goodbye: "GoodBye"
       follow:
         follow: "Follow"
         unfollow: "Unfollow"
@@ -278,7 +296,7 @@ your password will stay as it is."
       edit:
         edit_book: "Edit Book"
       index:
-        add: "ADD"
+        add: "ADD BOOK"
         category: "Quản lý truyện"
       new:
         add_book: "Add Book"
