@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     if @comment.save
       respond_to do |format|
-        format.html{ redirect_to request.referrer }
+        format.html{redirect_to request.referrer}
         format.js
       end
     else
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   def destroy
     if @comment.destroy
       respond_to do |format|
-        format.html{ redirect_to request.referrer }
+        format.html{redirect_to request.referrer}
         format.js
       end
     else

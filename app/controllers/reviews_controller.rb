@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       respond_to do |format|
-        format.html{ redirect_to request.referrer }
+        format.html{redirect_to request.referrer}
         format.js
       end
     else
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
   def destroy
     if @review.destroy
       respond_to do |format|
-        format.html{ redirect_to request.referrer }
+        format.html{redirect_to request.referrer}
         format.js
       end
     else

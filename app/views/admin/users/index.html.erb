@@ -21,6 +21,11 @@
             <%= render @users %>
             <%= will_paginate %>
           </tbody>
+          <div class="export">
+              <i><%= t("view.users.index.download") %></i>
+              <%= link_to t("view.users.index.users_xls"), admin_users_path(format: Settings.export.xls), class: "fa fa-check btn btn-success " %>
+              <%= link_to t("view.users.index.users_csv"), admin_users_path(format: Settings.export.csv), class: "fa fa-check btn btn-success " %>
+          </div>
         </table>
         </div>
       </div>

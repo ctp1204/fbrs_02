@@ -90,6 +90,7 @@ en:
       setuser: "Set user success"
       setadmin: "Set admin success"
       nofound: "Sorry. No found"
+      errors: "ERRORS"
     sessions:
       error_login: "Invalid email/password combination"
       error_load_user: "Sorry, email does not exist"
@@ -126,11 +127,17 @@ en:
       following: "following"
       followers: "followers"
     users:
+      index:
+        download: "Download"
+        users_xls: "To Excel"
+        users_csv: "To CSV"
       new:
         sign_up: "Sign up"
         create_user: "Create my account"
       user:
         delete: "Delete"
+        setadmin: "Admin"
+        setuser: "User"
         sure: "You sure?"
         all_users: "All users"
         update_profile: "Update your profile"

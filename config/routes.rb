@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      patch :update_role
       get :following, :followers
     end
   end
@@ -31,6 +30,10 @@ Rails.application.routes.draw do
     root "static_pages#index"
     resources :books, except: :show
     resources :categories, except: [:edit, :update, :show]
-    resources :users, only: [:index, :destroy]
+    resources :users do
+      member do
+        patch :update
+      end
+    end
   end
 end
