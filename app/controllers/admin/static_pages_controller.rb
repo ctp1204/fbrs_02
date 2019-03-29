@@ -7,10 +7,10 @@ class Admin::StaticPagesController < ApplicationController
 
   private
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
     store_location
     flash[:danger] = t "controller.book.please_login"
-    redirect_to login_path
+    redirect_to new_user_session_path
   end
 
   def admin_user

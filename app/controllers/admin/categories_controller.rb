@@ -20,7 +20,6 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
-
   def destroy
     if @category.destroy
       flash[:success] = t "deleted"
