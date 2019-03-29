@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "books/searchlike", to: "books#searchlike"
   get "sessions/new"
   get "users/new"
+  resources :activities
   resources :books do
     resources :reviews do
       resources :comments

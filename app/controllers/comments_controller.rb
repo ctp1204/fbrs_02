@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     @comment = @review.comments.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
+      @comment.create_activity :create, owner: current_user
       respond_to do |format|
         format.html{redirect_to request.referrer}
         format.js

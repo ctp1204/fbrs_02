@@ -1,0 +1,3 @@
+<h1><%= t "view.activities.index_activity" %></h1>
+  <%= render partial: "activities", collection: @activities, as: :activity %>
+<%= will_paginate %>
