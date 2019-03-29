@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
-  def password_reset user
-    @user = user
-    mail to: user.email, subject: t("pass_reset")
+  def suggest_confirm suggest
+    @suggest = suggest
+    mail to: suggest.user.email, subject: t("controller.mailers.user_mailer.suggest")
   end
 end

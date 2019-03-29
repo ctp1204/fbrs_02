@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_070403) do
+ActiveRecord::Schema.define(version: 2019_04_03_074229) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "target_id"
@@ -35,9 +35,7 @@ ActiveRecord::Schema.define(version: 2019_04_03_070403) do
     t.string "book_img_content_type"
     t.bigint "book_img_file_size"
     t.datetime "book_img_updated_at"
-    t.datetime "deleted_at"
     t.index ["category_id"], name: "index_books_on_category_id"
-    t.index ["deleted_at"], name: "index_books_on_deleted_at"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -45,8 +43,6 @@ ActiveRecord::Schema.define(version: 2019_04_03_070403) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
-    t.index ["deleted_at"], name: "index_categories_on_deleted_at"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -58,6 +54,21 @@ ActiveRecord::Schema.define(version: 2019_04_03_070403) do
     t.datetime "updated_at", null: false
     t.index ["review_id"], name: "index_comments_on_review_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
   create_table "likes", force: :cascade do |t|

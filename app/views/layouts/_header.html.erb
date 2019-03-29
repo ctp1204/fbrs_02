@@ -23,7 +23,7 @@
                 <% if current_user.admin? %>
                   <li><%= link_to t("layouts.header.admin"), admin_root_path %></li>
                 <% else %>
-                  <li><%= link_to t("layouts.header.suggest"), suggests_path %></li>
+                  <li><%= link_to t("layouts.header.suggest"), suggests_path(user_id: current_user) %></li>
                 <% end %>
                   <li><%= current_user.name %></li>
                   <li><%= link_to t("layouts.header.user"), users_path %></li>
