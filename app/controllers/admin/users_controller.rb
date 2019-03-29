@@ -29,21 +29,16 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def update
-    if @user.admin?
-      @user.user!
-      flash[:success] = t "controller.user.setuser"
-      redirect_to request.referrer
-    elsif @user.user?
-      @user.admin!
-      flash[:success] = t "controller.user.setadmin"
-      redirect_to request.referrer
+    @user.role = @user.admin? ? User.roles[:user] : User.roles[:admin]
+    if @user.save
+      respond_to do |format|
+        format.html{ redirect_to request.referrer }
+        format.js
+      end
     else
       flash[:danger] = t "controller.user.nofound"
       redirect_to request.referrer
     end
-  rescue Exception
-    flash[:notice] = t "controller.user.errors"
-    redirect_to request.referrer
   end
 
   def destroy

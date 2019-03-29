@@ -16,6 +16,7 @@ class Admin::CategoriesController < Admin::BaseController
   def create
     @category = Category.new category_params
     if @category.save
+      flash[:success] = t "controller.category.create_category"
       redirect_to admin_categories_path
     else
       render :new

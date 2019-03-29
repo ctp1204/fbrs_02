@@ -16,13 +16,16 @@ class Admin::BooksController < Admin::BaseController
 
   def create
     @book = Book.new book_params
-    @suggest.accepted!
+    @suggest.accepted! if @suggest
     if @book.save
       redirect_to admin_books_path
       flash[:success] = t "controller.book.create_book"
     else
       render :new
     end
+  rescue Exception
+    flash[:notice] = t "controller.user.errors"
+    redirect_to request.referrer
   end
 
   def edit; end

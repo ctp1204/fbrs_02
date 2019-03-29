@@ -6,26 +6,14 @@
         <div class="table-responsive">
         <div class="row"></div>
         <%= render "search_user" %>
-        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-          <thead>
-            <tr>
-              <th><%= sort_link @search, :id, t(".id") %></th>
-              <th class="name"><%= sort_link @search, :name, t(".user_name") %></th>
-              <th><%= sort_link @search, :email, t(".email") %></th>
-              <th class="action"><%= t ".action" %></th>
-            </tr>
-          </thead>
-          <tbody>
-            <%= render @users %>
-          </tbody>
-          <div class="add-user"><%= link_to t("view.users.index.adduser"), new_admin_user_path, class: "btn btn-success" %></div>
-          <div class="export">
-              <i><%= t("view.users.index.download") %></i>
-              <%= link_to t("view.users.index.users_xls"), admin_users_path(format: Settings.export.xls), class: "fa fa-check btn btn-success " %>
-              <%= link_to t("view.users.index.users_csv"), admin_users_path(format: Settings.export.csv), class: "fa fa-check btn btn-success " %>
-          </div>
-        </table>
-          <%= will_paginate @users %>
+        <div class="add-user"><%= link_to t("view.users.index.adduser"), new_admin_user_path, class: "btn btn-success" %></div>
+        <div class="export">
+            <i><%= t("view.users.index.download") %></i>
+            <%= link_to t("view.users.index.users_xls"), admin_users_path(format: Settings.export.xls), class: "fa fa-check btn btn-success " %>
+            <%= link_to t("view.users.index.users_csv"), admin_users_path(format: Settings.export.csv), class: "fa fa-check btn btn-success " %>
+        </div>
+        <%= render @users %>
+        <%= will_paginate @users %>
         </div>
       </div>
     </div>

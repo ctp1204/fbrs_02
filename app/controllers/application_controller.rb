@@ -21,30 +21,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 
-  def require_log_in
-    unless user_signed_in?
-      flash[:danger] = t "controller.book.please_login"
-      redirect_to new_user_session_path
-    end
-  end
-
-  def require_log_in
-    unless user_signed_in?
-      flash[:danger] = t "controller.book.please_login"
-      redirect_to new_user_session_path
-    end
-  end
-
   def search_book
     @q = Book.ransack params[:q]
     @books = @q.result.includes(:category, :likes, :reviews).newest
-  end
-
-  def require_log_in
-    unless user_signed_in?
-      flash[:danger] = t "controller.book.please_login"
-      redirect_to new_user_session_path
-    end
   end
 
   def require_log_in

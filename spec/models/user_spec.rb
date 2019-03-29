@@ -9,33 +9,13 @@ RSpec.describe User, type: :model do
 
   describe "validations" do
     describe "name" do
-      it { is_expected.to validate_presence_of(:name) }
-      it "Name can't be blank" do
-        user.name = nil
-        user.valid?
-        expect(user.errors.messages[:name].first).to eq(
-          I18n.t "activerecord.errors.models.user.attributes.name.blank")
-      end
-    end
-
-    describe "address" do
-      it { is_expected.to validate_presence_of(:name) }
-      it "Address can't be blank" do
-        user.email = nil
-        user.valid?
-        expect(user.errors.messages[:email].first).to eq(
-          I18n.t "activerecord.errors.models.user.attributes.name.blank")
-      end
+    it {is_expected.to validate_presence_of(:name).with_message(
+      I18n.t("activerecord.errors.models.user.attributes.name.blank"))}
     end
 
     describe "email" do
-      it { is_expected.to validate_presence_of(:email) }
-      it "Email can't be blank" do
-        user.email = nil
-        user.valid?
-        expect(user.errors.messages[:email].first).to eq(
-          I18n.t "activerecord.errors.models.user.attributes.name.blank")
-      end
+    it {is_expected.to validate_presence_of(:email).with_message(
+      I18n.t("activerecord.errors.models.user.attributes.name.blank"))}
     end
 
     describe "password" do

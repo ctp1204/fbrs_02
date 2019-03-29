@@ -96,6 +96,7 @@ en:
     category:
       restore_category: "Restore category successfully"
       temporary_category: "Delete category temporary"
+      create_category: "Create category successfully"
       nofound: "No Found"
     mailers:
       user_mailer:
