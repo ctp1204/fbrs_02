@@ -6,7 +6,7 @@ class LikesController < ApplicationController
     unless user_like_book?
       @like = current_user.likes.create(book_id: @book.id)
       respond_to do |format|
-        format.html{ redirect_to request.referrer }
+        format.html{redirect_to request.referrer}
         format.js
       end
     end
@@ -16,7 +16,7 @@ class LikesController < ApplicationController
     if user_like_book?
       @unlike.destroy
       respond_to do |format|
-        format.html{ redirect_to request.referrer }
+        format.html{redirect_to request.referrer}
         format.js
       end
     else

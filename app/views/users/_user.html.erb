@@ -1,13 +1,4 @@
 <li>
   <%= gravatar_for user, size: Settings.view.users.size %>
   <%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to t("view.users.user.delete"), user, method: :delete,
-        data: { confirm: t("view.users.user.sure") } %>
-    <% if current_user.admin? && user.role == "user" %>
-      | <%= link_to t("view.users.user.setadmin"), update_role_user_path(user), method: :patch %>
-    <% elsif current_user.admin? && user.role == "admin" %>
-      | <%= link_to t("view.users.user.setuser"), update_role_user_path(user), method: :patch %>
-    <% end %>
-  <% end %>
 </li>
