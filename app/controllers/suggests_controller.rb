@@ -1,6 +1,7 @@
 class SuggestsController < ApplicationController
-  before_action :logged_in_user, :suggest_by_user, only: :index
-  before_action :load_suggest, only: %i(destroy index)
+  before_action :logged_in_user
+  before_action :load_suggest, only: :destroy
+  before_action :suggest_by_user, only: :index
 
   def index; end
 
@@ -11,7 +12,7 @@ class SuggestsController < ApplicationController
   def create
     @suggest = Suggest.new suggest_params
     if @suggest.save
-      flash[:success] = t ".success_rq"
+      flash[:success] = t "suggests.create.success_rq"
       redirect_to suggests_path(user_id: current_user)
     else
       flash.now[:danger] = t "can't_rq"
@@ -21,7 +22,7 @@ class SuggestsController < ApplicationController
 
   def destroy
     if @suggest.destroy
-      flash[:success] = t "deleted"
+      flash[:success] = t "suggests.create.delete_suggest"
       redirect_to suggests_path(user_id: current_user)
     else
       flash[:danger] = t "un_delete"

@@ -1,19 +1,6 @@
 class Admin::StaticPagesController < ApplicationController
   layout "admin"
-  before_action :logged_in_user, onely: :index
-  before_action :admin_user, onely: :index
-
+  before_action :logged_in_user, only: :index
+  before_action :is_admin, only: :index
   def index; end
-
-  private
-  def logged_in_user
-    return if user_signed_in?
-    store_location
-    flash[:danger] = t "controller.book.please_login"
-    redirect_to new_user_session_path
-  end
-
-  def admin_user
-    redirect_to(root_path) unless current_user.admin?
-  end
 end

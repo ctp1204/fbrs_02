@@ -4,4 +4,10 @@
 <ul class="users">
   <%= render @users %>
 </ul>
+<div class="container">
+  <p>
+    <%= t("view.users.index.download") %><%= link_to t("view.users.index.users_xls"), users_path(format: Settings.export.xls) %>
+    <%= link_to t("view.users.index.users_csv"), users_path(format: Settings.export.cvs) %>
+  </p>
+</div>
 <%= will_paginate %>

@@ -1,5 +1,7 @@
 class Admin::BooksController < ApplicationController
   layout "admin"
+  before_action :logged_in_user
+  before_action :is_admin, except: :destroy
   before_action :load_book, except: %i(index new create)
 
   def index

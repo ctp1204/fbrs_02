@@ -45,6 +45,9 @@ en:
   deleted: "Book deleted"
   un_delete: "unsuccessfully_book"
   suggests:
+    create:
+      success_rq: "Add susgest successfully"
+      delete_suggest: "Delete susgest successfully"
     index:
       book_name: "Book Name"
       book_category: "Book Category"
@@ -78,6 +81,7 @@ en:
     can't_rq: "can't request"
     book:
       please_login: "Please Log in."
+      error_page: "You do not have access to this page"
     user:
       create_user: "Welcome to the Sample App!"
       find_user_error: "Sorry, no data found user"
