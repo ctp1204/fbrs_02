@@ -38,3 +38,4 @@ export:
   csv: "csv"
   users_xls: "To Excel"
   users_csv: "To CSV"
+mailer_sender: "lqcuong.qt@gmail.com"
