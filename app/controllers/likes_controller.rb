@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  authorize_resource
   before_action :load_book, only: %i(create destroy)
   before_action :load_unlike, only: :destroy
 
