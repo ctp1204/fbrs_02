@@ -4,12 +4,26 @@ class Admin::UsersController < Admin::BaseController
   before_action :load_user, except: :index
 
   def index
-    @users = User.sort_by_created_at.paginate page: params[:page],
+    @search = User.ransack params[:q]
+    @users = @search.result.sort_by_created_at.paginate page: params[:page],
       per_page: Settings.controllers.user.index_page_admin
     respond_to do |format|
       format.html
       format.csv {send_data @users.to_csv}
       format.xls {send_data @users.to_csv(col_sep: "\t")}
+    end
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new user_params
+    if @user.save
+      redirect_to admin_users_path
+    else
+      render :new
     end
   end
 
@@ -43,10 +57,15 @@ class Admin::UsersController < Admin::BaseController
 
   private
 
+  def user_params
+    params.require(:user).permit :name, :email, :phone,
+      :address, :password, :password_confirmation, :role
+  end
+
   def load_user
     @user = User.find_by id: params[:id]
     return if @user
     flash[:danger] = t "controller.user.find_user_error"
-    redirect_to root_path
+    redirect_to admin_root_path
   end
 end

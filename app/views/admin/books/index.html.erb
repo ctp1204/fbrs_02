@@ -3,16 +3,27 @@
     <h2><%= t (".category") %></h2>
     <div class="panel panel-default">
       <div class="panel-body">
+        <%= render "form_search" %>
         <div class="table-responsive">
           <div class="row">
             <div class="col-sm-6">
                 <a href="/admin/books/new" class="btn btn-success btn-md"><%= t ".add" %></a>
             </div>
           </div>
-          <div>
-            <br>
-          </div>
-          <%= render @books %>
+          <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead>
+              <tr>
+                <th><%= sort_link @search_book, :id, t(".id") %></th>
+                <th class="name"><%=  sort_link @search_book, :title, t(".name") %></th>
+                <th><%= sort_link @search_book, :category_name, t(".category") %></th>
+                <th><%=  sort_link @search_book, :author, t(".author") %></th>
+                <th><%= t ".image" %></th>
+                <th class="action"><%= t ".action" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @books %>
+            </tbody>
         </div>
       </div>
     </div>

@@ -344,3 +344,34 @@ i.cr-review {
 textarea#review_content {
     height: 150px;
 }
+input.btn.btn-success {
+    float: left;
+    width: 15%;
+    margin: 3px 0px 0px 4px;
+}
+input#q_author_cont {
+    width: 28%;
+    float: left;
+}
+input#q_category_name_cont {
+    width: 28%;
+    float: left;
+}
+input#q_title_cont {
+    width: 28%;
+    float: left;
+}
+.tg-searchbox-search {
+    margin: 15px 0px 0px 65px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    padding: 0 225px;
+    position: absolute;
+}
+li.logo-current img{
+  width: 30px;
+  border-radius: 20px
+}

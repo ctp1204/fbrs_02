@@ -541,3 +541,35 @@ p {
 .export {
   padding: 0px 0px 10px;
 }
+input#q_email_cont {
+    width: 36%;
+}
+input#q_name_cont {
+    width: 36%;
+}
+select#q_role_cont {
+    width: 18%;
+}
+input#q_title_cont {
+    width: 30%;
+    float: left;
+}
+input#q_category_name_cont {
+    width: 30%;
+}
+input#q_author_cont {
+    width: 30%;
+}
+.col-sm-6 {
+    padding: 10px 30px 10px;
+}
+.add-user {
+    padding: 10px 10px 10px;
+}
+.khoi img {
+    width: 30px;
+    border-radius: 20px;
+}
+li.text-center img {
+    width: 260px;
+}

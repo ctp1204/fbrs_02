@@ -32,8 +32,10 @@ gem "omniauth-facebook", "~> 5.0"
 gem "paperclip", "~> 6.1"
 gem "parallax-rails"
 gem "parallaxslider-rails"
+gem "paranoia", "~> 2.2"
 gem "popper_js", "~> 1.14.5"
 gem "puma", "~> 3.11"
+gem "ransack"
 gem "rails", "~> 5.2.2"
 gem "rails-i18n"
 gem "rubocop", "~> 0.54.0", require: false
@@ -41,7 +43,7 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form", "~> 4.1"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
-gem "will_paginate", "3.1.6"
+gem "will_paginate", "~> 3.1", ">= 3.1.7"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

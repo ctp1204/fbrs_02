@@ -25,7 +25,14 @@
                 <% else %>
                   <li><%= link_to t("layouts.header.suggest"), suggests_path(user_id: current_user) %></li>
                 <% end %>
-                  <li><%= current_user.name %></li>
+                  <li class="logo-current">
+                    <% if current_user.image %>
+                      <%= image_tag(current_user.image)%>
+                    <% else %>
+                      <%= image_tag current_user.picture.url if current_user.picture? %>
+                    <% end %>
+                    <%= current_user.name %>
+                  </li>
                   <li><%= link_to t("layouts.header.user"), users_path %></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -60,11 +67,18 @@
             <a href="index-2.html">
               <%= link_to image_tag("logo.png", alt: "company name here") %>
             </a></strong>
-            <div class="tg-searchbox">
-              <%= form_for "", url: books_search_path, role: "search",
-              method: :get do %>
-                <%= text_field_tag :search, params[:search], placeholder: t("view.books.show.search") %>
-              <% end %>
+            <div class="tg-searchbox-search">
+            <%= search_form_for @q, url: books_search_path, method: :get do |f| %>
+              <div class="field">
+                <%= f.text_field :title_cont, class: "form-control",
+                  placeholder: t("layouts.header.search_book") %>
+                <%= f.text_field :category_name_cont, class: "form-control",
+                  placeholder: t("layouts.header.search_category") %>
+                <%= f.text_field :author_cont, class: "form-control",
+                  placeholder: t("layouts.header.search_author") %>
+                <%= f.submit t("layouts.header.search"), class: "btn btn-success" %>
+              </div>
+            <% end %>
             </div>
           </div>
         </div>
