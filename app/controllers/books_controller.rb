@@ -48,7 +48,8 @@ class BooksController < ApplicationController
   end
 
   def book_by_category
-    @books = Book.by_category(params[:category]).limit Settings.models.limit
+    @q = Book.ransack params[:q]
+    @books = @q.result.by_category(params[:category]).limit Settings.models.limit
   end
 
   def book_by_like

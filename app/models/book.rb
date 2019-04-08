@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+  acts_as_paranoid
   belongs_to :category
   has_many :marks, dependent: :destroy
   has_many :reviews, dependent: :destroy

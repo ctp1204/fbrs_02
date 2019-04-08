@@ -1,7 +1,7 @@
 class Admin::CategoriesController < Admin::BaseController
   layout "admin"
   authorize_resource
-  before_action :find_category, only: :destroy
+  before_action :find_category, only: %i(update destroy)
 
   def index
     @search_categories = Category.ransack params[:q]
@@ -22,9 +22,19 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
+  def update
+    @category = Category.restore(params[:id], recursive: true)
+    if @category
+      flash[:success] = t "controller.category.restore_category"
+    else
+      flash[:danger] = t "controller.category.nofound"
+    end
+    redirect_to admin_categories_path
+  end
+
   def destroy
     if @category.destroy
-      flash[:success] = t "deleted"
+      flash[:success] = t "controller.category.temporary_category"
       redirect_to admin_categories_path
     else
       flash[:danger] = t "un_delete"

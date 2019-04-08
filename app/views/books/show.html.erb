@@ -58,6 +58,9 @@
                     <span class="tg-bookwriter"><%= t "view.books.show.by" %>
                       <%= @book.publisher %>
                     </span>
+                    <span class="tg-bookwriter"><%= t "view.books.show.published_on" %>
+                      <%= I18n.localize @book.created_at, format: :long %>
+                    </span>
                     <h4><%= t "view.books.show.avg_rating" %> </h4>
                     <div class="average_review-rating" data-score="<%= @book.rate_points %>">
                     </div>
@@ -72,7 +75,9 @@
                         <% end %>
                       </div>
                     </div>
-
+                    <div class="button-shared">
+                      <%= social_share_button_tag(@book.title) %>
+                    </div>
                     <div><%= t "view.books.show.base" %>
                       <%= t("count_review", count: @book.reviews.size) %>
                     </div>

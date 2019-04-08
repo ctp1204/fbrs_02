@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::BaseController
   layout "admin"
   authorize_resource
-  before_action :load_user, except: :index
+  before_action :load_user, only: %i(update destroy)
 
   def index
     @search = User.ransack params[:q]
@@ -22,6 +22,7 @@ class Admin::UsersController < Admin::BaseController
     @user = User.new user_params
     if @user.save
       redirect_to admin_users_path
+      flash[:success] = t "controller.user.create_user"
     else
       render :new
     end
@@ -59,7 +60,7 @@ class Admin::UsersController < Admin::BaseController
 
   def user_params
     params.require(:user).permit :name, :email, :phone,
-      :address, :password, :password_confirmation, :role
+      :address, :password, :password_confirmation, :role, :picture
   end
 
   def load_user

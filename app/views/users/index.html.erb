@@ -1,6 +1,5 @@
 <% provide :title, t("view.users.user.all_users") %>
 <h1><%= t "view.users.user.all_users" %></h1>
-<%= will_paginate %>
 <ul class="users">
   <%= render @users %>
 </ul>
@@ -10,4 +9,3 @@
     <%= link_to t("view.users.index.users_csv"), users_path(format: Settings.export.cvs) %>
   </p>
 </div>
-<%= will_paginate %>

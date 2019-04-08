@@ -17,6 +17,7 @@ class Admin::BooksController < Admin::BaseController
     @book = Book.new book_params
     if @book.save
       redirect_to admin_books_path
+      flash[:success] = t "controller.book.create_book"
     else
       render :new
     end
@@ -26,7 +27,7 @@ class Admin::BooksController < Admin::BaseController
 
   def update
     if @book.update(book_params)
-      flash[:success] = t ".update"
+      flash[:success] = t "controller.book.update_book"
       redirect_to admin_books_path
     else
       render :edit
@@ -35,10 +36,10 @@ class Admin::BooksController < Admin::BaseController
 
   def destroy
     if @book.destroy
-      flash[:success] = t "deleted"
+      flash[:success] = t "controller.book.delete_book"
       redirect_to admin_books_path
     else
-      flash[:danger] = t "un_delete"
+      flash[:danger] = t "controller.book.delete_fail"
       redirect_to admin_root_path
     end
   end
