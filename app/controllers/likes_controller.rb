@@ -6,6 +6,7 @@ class LikesController < ApplicationController
   def create
     unless user_like_book?
       @like = current_user.likes.create(book_id: @book.id)
+      @like.create_activity :create, owner: current_user
       respond_to do |format|
         format.html{redirect_to request.referrer}
         format.js

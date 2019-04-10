@@ -97,6 +97,9 @@ en:
       restore_category: "Restore category successfully"
       temporary_category: "Delete category temporary"
       nofound: "No Found"
+    mailers:
+      user_mailer:
+        suggest: "Suggest Confirmation"
     book:
       please_login: "Please Log in."
       error_page: "You do not have access to this page"
@@ -276,6 +279,16 @@ your password will stay as it is."
       sure: "Are you sure ? "
       ago: "ago"
       cmt: "comment"
+    public_activity:
+      remove_activity: "which has since been removed"
+      comment:
+        create: "add comment to"
+      like:
+        create: "add like to"
+      review:
+        create: "add review to"
+    activities:
+      index_activity: "List Activities"
   activerecord:
     attributes:
       user:

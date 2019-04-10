@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
 
     if @review.save
+      @review.create_activity :create, owner: current_user
       respond_to do |format|
         format.html{redirect_to request.referrer}
         format.js

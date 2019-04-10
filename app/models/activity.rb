@@ -1,4 +1,6 @@
-class Activity < ApplicationRecord
-  # belongs_to :user
-  # has_many :likes, dependent: :destroy
+class Activity < PublicActivity::Activity
+  scope :by_activity_following, (lambda do |owner_ids|
+    where owner_id: owner_ids
+  end)
+  scope :newest, ->{order created_at: :desc}
 end

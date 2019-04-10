@@ -232,6 +232,11 @@ GEM
       ast (~> 2.4.0)
     popper_js (1.14.5)
     powerpack (0.1.2)
+    public_activity (1.6.3)
+      actionpack (>= 3.0.0)
+      activerecord (>= 3.0)
+      i18n (>= 0.5.0)
+      railties (>= 3.0.0)
     public_suffix (3.0.3)
     puma (3.12.1)
     rack (2.0.6)
@@ -386,6 +391,7 @@ DEPENDENCIES
   parallaxslider-rails
   paranoia (~> 2.2)
   popper_js (~> 1.14.5)
+  public_activity
   puma (~> 3.11)
   rails (~> 5.2.2)
   rails-i18n

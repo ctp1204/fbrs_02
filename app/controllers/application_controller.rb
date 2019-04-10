@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :search_book
   protect_from_forgery with: :exception
+  include PublicActivity::StoreController
   include SessionsHelper
   include BooksHelper
   include ApplicationHelper
@@ -37,6 +38,13 @@ class ApplicationController < ActionController::Base
   def search_book
     @q = Book.ransack params[:q]
     @books = @q.result.includes(:category, :likes, :reviews).newest
+  end
+
+  def require_log_in
+    unless user_signed_in?
+      flash[:danger] = t "controller.book.please_login"
+      redirect_to new_user_session_path
+    end
   end
 
   def require_log_in
