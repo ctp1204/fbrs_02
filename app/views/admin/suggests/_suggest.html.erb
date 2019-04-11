@@ -1,0 +1,13 @@
+<tr class=" gradeX">
+  <td id="catId"><%= suggest.id %></td>
+  <td><%= suggest.title %></td>
+  <td><%= suggest.categories %></td>
+  <td><%= suggest.user_name %></td>
+  <td><%= suggest.status %></td>
+  <td class="center">
+    <% if suggest.waiting? %>
+      <%= link_to t("view.suggests.index.accept"), edit_admin_suggest_path(suggest), method: :get, class: "fa fa-trash btn btn-success " %>
+      <%= link_to t("view.suggests.index.reject") , admin_suggest_path(suggest, value: :rejected), method: :put, class: "fa fa-user btn btn-danger " %>
+    <% end %>
+  </td>
+</tr>

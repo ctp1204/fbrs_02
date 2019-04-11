@@ -1,6 +1,10 @@
 user:
+  min_password: 6
+  max_password: 15
   name:
     max_length: 50
+  address:
+    max_length: 140
   email:
     max_length: 255
   password:

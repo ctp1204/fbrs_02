@@ -2,6 +2,7 @@ class Admin::BooksController < Admin::BaseController
   layout "admin"
   authorize_resource
   before_action :load_book, except: %i(index new create)
+  before_action :load_suggest, only: :create
 
   def index
     @search_book = Book.ransack params[:q]
@@ -15,6 +16,7 @@ class Admin::BooksController < Admin::BaseController
 
   def create
     @book = Book.new book_params
+    @suggest.accepted!
     if @book.save
       redirect_to admin_books_path
       flash[:success] = t "controller.book.create_book"
@@ -57,5 +59,12 @@ class Admin::BooksController < Admin::BaseController
     return if @book
     flash[:danger] = t "messenger"
     redirect_to admin_book_path
+  end
+
+  def load_suggest
+    @suggest = Suggest.find_by id: params[:book][:suggest_id]
+    return @suggest
+    flash[:danger] = t "messenger"
+    redirect_to admin_root_path
   end
 end
